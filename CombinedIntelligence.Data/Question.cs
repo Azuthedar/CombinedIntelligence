@@ -8,7 +8,7 @@ namespace CombinedIntelligence.Data
         public int Id;
         public int UserId;
         public string HeaderText;
-        public string Description;
+        public string BodyText;
         public List<Tag> Tags;
         public DateTime DatePosted;
         public List<Vote> Votes;
