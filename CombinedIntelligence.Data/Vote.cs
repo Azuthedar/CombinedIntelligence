@@ -6,6 +6,6 @@ namespace CombinedIntelligence.Data
     public class Vote
     {
         public VoteTypes vote = VoteTypes.NoVote;
-        public int UserId;
+        public int UserId { get; set; }
     }
 }

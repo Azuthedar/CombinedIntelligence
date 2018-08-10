@@ -5,13 +5,14 @@ namespace CombinedIntelligence.Data
 {
     public class Question
     {
-        public int Id;
-        public int UserId;
-        public string HeaderText;
-        public string BodyText;
-        public List<Tag> Tags;
-        public DateTime DatePosted;
-        public List<Vote> Votes;
+        public int Id { get; }
+        public int UserId { get; set; }
+        public string HeaderText { get; set; }
+        public string BodyText { get; set; }
+        public List<Tag> Tags { get; }
+        public DateTime DatePosted { get; set; }
+        public List<Vote> Votes { get; }
+
         public int VoteScore
         {
             get
@@ -24,6 +25,12 @@ namespace CombinedIntelligence.Data
 
                 return voteScore;
             }
+        }
+
+        public Question()
+        {
+            Votes = new List<Vote>();
+            Tags = new List<Tag>();
         }
     }
 }

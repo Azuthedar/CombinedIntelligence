@@ -6,8 +6,8 @@ namespace CombinedIntelligence.Data
 {
     public class Tag
     {
-        public string Name;
-        public static List<Tag> Tags;
+        public string Name { get; set; }
+        public static List<Tag> Tags = new List<Tag>();
 
         public void AddTag(Tag tag)
         {
