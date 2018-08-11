@@ -59,9 +59,14 @@ namespace CombinedIntelligence.Data
 			Image = image;
 		}
 
-		public void incrementScore(int score)
+		public void incrementScore()
 		{
-			Score = score;
+			Score += 1;
+		}
+
+		public void decrementScore()
+		{
+			Score -= 1;
 		}
 	}
 }
