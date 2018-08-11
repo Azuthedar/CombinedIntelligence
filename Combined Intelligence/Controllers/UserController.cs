@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CombinedIntelligence.Data;
 
 namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
+
+		User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
 		// GET: User
 		public ActionResult Index()
 		{
@@ -16,26 +19,18 @@ namespace Combined_Intelligence.Controllers
 
 		public ActionResult Profile(int ID)
 		{
-			List<String> tagPreferences = new List<String>();
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
-			tagPreferences.Add("Hello");
-			tagPreferences.Add("World");
+			mockUser.AddTag(new Tag("C++"));
+			mockUser.AddTag(new Tag("C#"));
+			mockUser.AddTag(new Tag("R"));
+			mockUser.AddTag(new Tag(".NET"));
+			mockUser.AddTag(new Tag("ASP.NET"));
 
-			ViewBag.ID = ID;
-			ViewBag.userName = "John";
-			ViewBag.email = "John@gmail.com";
-			ViewBag.team = "Actuaris";
-			ViewBag.score = 50;
-			ViewBag.Preferences = tagPreferences;
+			ViewBag.ID = mockUser.Id;
+			ViewBag.userName = mockUser.Name;
+			ViewBag.email = mockUser.Email;
+			ViewBag.team = mockUser.Team;
+			ViewBag.score = mockUser.Score;
+			ViewBag.Preferences = mockUser.Tags;
 
 
 			List<String> questions = new List<string>();

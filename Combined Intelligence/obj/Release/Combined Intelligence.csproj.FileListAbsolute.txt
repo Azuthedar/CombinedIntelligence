@@ -98,3 +98,5 @@ C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\obj\Rel
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\obj\Release\Combined Intelligence.csproj.CopyComplete
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\obj\Release\Combined Intelligence.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\obj\Release\Combined Intelligence.pdb
+C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligence.Data.dll
+C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligence.Data.pdb

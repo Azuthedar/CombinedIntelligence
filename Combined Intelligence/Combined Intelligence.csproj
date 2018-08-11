@@ -231,6 +231,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CombinedIntelligence.Data\CombinedIntelligence.Data.csproj">
+      <Project>{19a8a97b-8ef5-476d-9984-fcee5d43a3bc}</Project>
+      <Name>CombinedIntelligence.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CombinedIntelligenceAPI\CombinedIntelligenceAPI.csproj">
       <Project>{69951aa8-2f9a-4832-93c5-182a99261bca}</Project>
       <Name>CombinedIntelligenceAPI</Name>

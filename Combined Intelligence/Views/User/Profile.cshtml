@@ -23,9 +23,9 @@
                 Preferences:
                 <ul>
                     <li>
-                        @foreach (string item in ViewBag.Preferences)
+                        @foreach (CombinedIntelligence.Data.Tag item in ViewBag.Preferences)
                         {
-                            <span><i>@item</i>, </span>
+                            <span><i>@item.Name</i>, </span>
                         }
                     </li>
                 </ul>
@@ -62,8 +62,14 @@
             @foreach (string question in ViewBag.Questions)
             {
                 <div class="tableFormatGrid">
-                    <div class="score">50</div>
-                    <div class="views">100</div>
+                    <div class="score">50
+                        <br />
+                        <span id="subscript">Score</span>
+                    </div>
+                    <div class="views">100
+                        <br />
+                        <span id="subscript">Views</span>
+                    </div>
                     <div class="description">@question</div>
                 </div>
                 <hr class="style-two" />
