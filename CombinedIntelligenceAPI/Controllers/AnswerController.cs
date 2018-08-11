@@ -29,6 +29,7 @@ namespace CombinedIntelligenceAPI.Controllers
         // PUT api/values/5
         public void PutAnswer(int id, [FromBody]string value)
         {
+
         }
 
         // DELETE api/values/5

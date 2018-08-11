@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combined Intelligence", "Combined Intelligence\Combined Intelligence.csproj", "{82B215BB-BDA6-4B48-9483-DC875CA27910}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4F7CA590-DCC4-4888-A2CC-9F4227C294BD} = {4F7CA590-DCC4-4888-A2CC-9F4227C294BD}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CombinedIntelligence.Data", "CombinedIntelligence.Data\CombinedIntelligence.Data.csproj", "{4F7CA590-DCC4-4888-A2CC-9F4227C294BD}"
 EndProject
