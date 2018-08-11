@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CombinedIntelligence.Data;
 
 namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
 
-		public UserController(User user)
-		{
-
-		}
-		User mockUser = new User();
-		
 		// GET: User
 		public ActionResult Index()
 		{
