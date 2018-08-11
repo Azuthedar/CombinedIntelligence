@@ -95,6 +95,7 @@ C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceA
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.csproj.CopyComplete
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.dll
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.pdb
+<<<<<<< HEAD
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.dll
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.pdb
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\bin\ApplicationInsights.config
@@ -197,3 +198,5 @@ C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntel
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.csproj.CopyComplete
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\bin\CombinedIntelligence.Data.dll
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\bin\CombinedIntelligence.Data.pdb
+=======
+>>>>>>> parent of ddfcdde... Fixed data project

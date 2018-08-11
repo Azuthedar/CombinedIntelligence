@@ -95,6 +95,7 @@ C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Inte
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\obj\Debug\Combined Intelligence.csproj.CopyComplete
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\obj\Debug\Combined Intelligence.dll
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\obj\Debug\Combined Intelligence.pdb
+<<<<<<< HEAD
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\System.Web.Cors.dll
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\System.Web.Http.Cors.dll
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\System.Web.Http.Cors.xml
@@ -103,3 +104,5 @@ C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Inte
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\CombinedIntelligence.Data.pdb
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\CombinedIntelligenceAPI.pdb
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\Combined Intelligence\bin\CombinedIntelligenceAPI.dll.config
+=======
+>>>>>>> parent of ddfcdde... Fixed data project

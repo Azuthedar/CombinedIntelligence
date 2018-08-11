@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "Rnhm9bESNPn+Ft4N+Lh0w3Njyg0KEIsOhd2nDY52k5zXMKgn6pqDzB8uOff7kwVZOUvaU6iGBrd+uNsxfi7KQg==",
+=======
+  "dgSpecHash": "XfNQo/cfSAsVEnYbxRD6NZPUzwMVbGt6YzNlB+5La8uJUW5eIiQmrHLYCvkW7Ym46UeZHU4yKdcakdwfV4nhZg==",
+>>>>>>> parent of ddfcdde... Fixed data project
   "success": true
 }
