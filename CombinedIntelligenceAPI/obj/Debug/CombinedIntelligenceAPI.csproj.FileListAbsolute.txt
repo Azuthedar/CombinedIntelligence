@@ -95,3 +95,5 @@ C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceA
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.csproj.CopyComplete
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.dll
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.pdb
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.dll
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.pdb
