@@ -1,0 +1,177 @@
+﻿/* grid width: 864px*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.l-wrap {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.four-col-grid .grid-item {
+    width: 22.5%;
+    float: left;
+    text-align: center;
+    background-color: rgb(200, 200, 200);
+}
+
+.four-col-grid:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+@media {
+    .container {
+        width: 100% !important;
+    }
+}
+
+@mixin clearfix {
+    &:after {
+        display: table;
+        clear: both;
+        content: '';
+    }
+}
+
+body {
+    margin-top: 3rem;
+}
+
+.grid-item {
+    width: calc((100% - 24px * 3) / 3);
+    margin-top: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 1%;
+    float: left;
+}
+
+.grid-item img {
+    width: 80%;
+    float: none;
+    border-radius: 100%;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+
+/* Gradient transparent - color - transparent */
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.grid-item p {
+    text-align: left;
+}
+
+.grid-item ul {
+    list-style: none;
+}
+
+.grid-item thead {
+    text-align:center;
+    font-weight: 300;
+}
+
+table {
+    table-layout: fixed;
+    width: 90%;
+    height: 80%;
+}
+
+table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.divHeader {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableFormatGrid {
+    display: flex;
+    width: 95%;
+}
+
+.tableFormatGrid > div {
+    flex: 1;
+}
+
+.tableFormatGrid .score {
+    width: 20%;
+    font-size: 1.7vh;
+}
+
+.tableFormatGrid .views {
+    width: 20%;
+    font-size: 1.7vh;
+}
+
+.tableFormatGrid .description {
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5vh;
+}
+
+.divHeader hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+.divHeader hr.style-seven:before { /* Not really supposed to work, but does */
+        display: block;
+        content: "";
+        height: 15px;
+        margin-top: -16px;
+        border-style: solid;
+        border-color: black;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+
+
+div #subscript {
+    font-size: 1.3vh;
+    font-style: italic;
+}

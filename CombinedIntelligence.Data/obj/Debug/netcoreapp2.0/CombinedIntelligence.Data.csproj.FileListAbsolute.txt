@@ -7,3 +7,12 @@ C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligence.
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.AssemblyInfo.cs
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.dll
 C:\Users\bbdnet1721\Desktop\Hackathon\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.pdb
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\bin\Debug\netcoreapp2.0\CombinedIntelligence.Data.deps.json
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\bin\Debug\netcoreapp2.0\CombinedIntelligence.Data.dll
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\bin\Debug\netcoreapp2.0\CombinedIntelligence.Data.pdb
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.csprojAssemblyReference.cache
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.csproj.CoreCompileInputs.cache
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.AssemblyInfoInputs.cache
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.AssemblyInfo.cs
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.dll
+C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\netcoreapp2.0\CombinedIntelligence.Data.pdb
