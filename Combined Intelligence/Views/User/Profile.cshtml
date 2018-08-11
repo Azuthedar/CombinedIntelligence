@@ -1,8 +1,80 @@
 ﻿
 @{
     ViewBag.Title = "Profile";
+    ViewBag.MaxShown = 10;
 }
+<head>
+    @Styles.Render("~/Content/css")
+</head>
 
-<h2>@ViewBag.Title</h2>
-<h1>@ViewBag.ID</h1>
 
+<div class="l-wrap">
+    <div class="four-col-grid">
+        <div class="grid-item">
+            <br />
+            <img src="~/Content/placeholder.png" />
+            <hr class='style-seven' />
+            <br />
+            <p>Name: @ViewBag.userName</p>
+            <p>Score: @ViewBag.score</p>
+            <p>Team: @ViewBag.team</p>
+            <p>Email: @ViewBag.email</p>
+            <p>
+                Preferences:
+                <ul>
+                    <li>
+                        @foreach (string item in ViewBag.Preferences)
+                        {
+                            <span><i>@item</i>, </span>
+                        }
+                    </li>
+                </ul>
+
+            </p>
+            </div>
+        <div class="grid-item">
+            <div class="divHeader">Top Answers<hr class="style-seven" /></div>
+            @{ int answerIt = 0; }
+            @foreach (string answer in ViewBag.Answers)
+            {
+                <div class="tableFormatGrid">
+                    <div class="score">50
+                    <br/>
+                    <span id="subscript">Score</span>
+                </div>
+                <div class="views">100
+                    <br />
+                    <span id="subscript">Views</span>
+                </div>
+                <div class="description">@answer</div>
+                </div>
+                <hr class="style-two" />
+                answerIt++;
+                if (answerIt >= ViewBag.MaxShown)
+                {
+                    break;
+                }
+            }
+        </div>
+        <div class="grid-item">
+            <div class="divHeader">Top Questions<hr class="style-seven" /></div>
+            @{ int questionIt = 0; }
+            @foreach (string question in ViewBag.Questions)
+            {
+                <div class="tableFormatGrid">
+                    <div class="score">50</div>
+                    <div class="views">100</div>
+                    <div class="description">@question</div>
+                </div>
+                <hr class="style-two" />
+                questionIt++;
+                if (questionIt >= ViewBag.MaxShown)
+                {
+                    break;
+                }
+            }
+        </div>
+        <div class="grid-item">Rewards</div>
+
+    </div>
+</div>
