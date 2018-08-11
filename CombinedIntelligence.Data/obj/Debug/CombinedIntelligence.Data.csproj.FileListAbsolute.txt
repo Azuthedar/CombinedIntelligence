@@ -1,5 +1,6 @@
-C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\bin\Debug\CombinedIntelligence.Data.dll
-C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\bin\Debug\CombinedIntelligence.Data.pdb
-C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.csproj.CoreCompileInputs.cache
-C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.dll
-C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.pdb
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\bin\Debug\CombinedIntelligence.Data.dll
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\bin\Debug\CombinedIntelligence.Data.pdb
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.csprojAssemblyReference.cache
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.csproj.CoreCompileInputs.cache
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.dll
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Debug\CombinedIntelligence.Data.pdb
