@@ -14,12 +14,6 @@ namespace Combined_Intelligence
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name :"Profile",
-                url: "Profiles/{id}",
-                defaults: new { controller = "User", action = "Profile" }
-            );
-
-            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

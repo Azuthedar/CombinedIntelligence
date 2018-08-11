@@ -664,31 +664,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbdnet1836\\.nuget\\packages\\": {},
+    "C:\\Users\\bbdnet1721\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\FlashChallenge\\Hackathon\\CombinedIntelligence_CLONE\\CombinedIntelligence.Data\\CombinedIntelligence.Data.csproj",
+      "projectUniqueName": "C:\\Users\\bbdnet1721\\Desktop\\Hackathon\\CombinedIntelligence\\CombinedIntelligence.Data\\CombinedIntelligence.Data.csproj",
       "projectName": "CombinedIntelligence.Data",
-      "projectPath": "C:\\Development\\FlashChallenge\\Hackathon\\CombinedIntelligence_CLONE\\CombinedIntelligence.Data\\CombinedIntelligence.Data.csproj",
-      "packagesPath": "C:\\Users\\bbdnet1836\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\FlashChallenge\\Hackathon\\CombinedIntelligence_CLONE\\CombinedIntelligence.Data\\obj\\",
+      "projectPath": "C:\\Users\\bbdnet1721\\Desktop\\Hackathon\\CombinedIntelligence\\CombinedIntelligence.Data\\CombinedIntelligence.Data.csproj",
+      "packagesPath": "C:\\Users\\bbdnet1721\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbdnet1721\\Desktop\\Hackathon\\CombinedIntelligence\\CombinedIntelligence.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bbdnet1836\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\bbdnet1721\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Users\\bbdnet1721\\Downloads": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://lombard-marshall.pkgs.visualstudio.com/_packaging/DevExpress/nuget/v3/index.json": {},
+        "https://lombard-marshall.pkgs.visualstudio.com/_packaging/Marshall.Integration/nuget/v3/index.json": {},
+        "https://lombard-marshall.pkgs.visualstudio.com/_packaging/Preview/nuget/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
