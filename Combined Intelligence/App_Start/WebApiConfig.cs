@@ -20,7 +20,6 @@ namespace Combined_Intelligence
                 defaults: new { id = RouteParameter.Optional }
             );
 			
-		
         }
     }
 }

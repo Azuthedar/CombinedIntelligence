@@ -49,7 +49,6 @@ C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\ros
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\roslyn\VBCSCompiler.exe
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\roslyn\VBCSCompiler.exe.config
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\Antlr3.Runtime.dll
-C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligence.Data.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligenceAPI.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\Microsoft.AI.DependencyCollector.dll
@@ -74,7 +73,6 @@ C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\Sys
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\System.Web.WebPages.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\System.Web.WebPages.Razor.dll
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\WebGrease.dll
-C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligence.Data.pdb
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligenceAPI.pdb
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\CombinedIntelligenceAPI.dll.config
 C:\Development\FlashChallenge\CombinedIntelligence\Combined Intelligence\bin\System.Web.Helpers.xml

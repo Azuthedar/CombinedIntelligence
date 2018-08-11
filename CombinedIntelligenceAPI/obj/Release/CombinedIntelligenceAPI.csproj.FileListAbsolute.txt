@@ -51,7 +51,6 @@ C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\r
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\roslyn\VBCSCompiler.exe
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\roslyn\VBCSCompiler.exe.config
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Antlr3.Runtime.dll
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\CombinedIntelligence.Data.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.DependencyCollector.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -73,7 +72,6 @@ C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\S
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\System.Web.WebPages.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\System.Web.WebPages.Razor.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\WebGrease.dll
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\CombinedIntelligence.Data.pdb
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Newtonsoft.Json.xml
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\System.Net.Http.Formatting.xml
@@ -92,7 +90,6 @@ C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\M
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.WindowsServer.xml
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\bin\Microsoft.AI.Web.xml
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.csprojAssemblyReference.cache
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.csproj.CoreCompileInputs.cache
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.csproj.CopyComplete
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.dll

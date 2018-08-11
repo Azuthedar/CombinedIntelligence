@@ -8,16 +8,6 @@ namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
-
-<<<<<<< HEAD
-		public UserController(User user)
-		{
-
-		}
-		User mockUser = new User();
-		
-=======
->>>>>>> parent of ddfcdde... Fixed data project
 		// GET: User
 		public ActionResult Index()
 		{

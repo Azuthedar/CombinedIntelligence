@@ -209,13 +209,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Forum\" />
     <Folder Include="Views\Post\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -231,10 +231,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CombinedIntelligence.Data\CombinedIntelligence.Data.csproj">
-      <Project>{842f595e-b958-4f91-a2eb-4dde7d37e7d6}</Project>
-      <Name>CombinedIntelligence.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CombinedIntelligenceAPI\CombinedIntelligenceAPI.csproj">
       <Project>{69951aa8-2f9a-4832-93c5-182a99261bca}</Project>
       <Name>CombinedIntelligenceAPI</Name>
