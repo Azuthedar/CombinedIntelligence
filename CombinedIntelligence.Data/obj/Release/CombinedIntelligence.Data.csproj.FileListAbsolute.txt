@@ -1,5 +1,0 @@
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\bin\Release\CombinedIntelligence.Data.dll
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\bin\Release\CombinedIntelligence.Data.pdb
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Release\CombinedIntelligence.Data.csproj.CoreCompileInputs.cache
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Release\CombinedIntelligence.Data.dll
-C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligence.Data\obj\Release\CombinedIntelligence.Data.pdb
