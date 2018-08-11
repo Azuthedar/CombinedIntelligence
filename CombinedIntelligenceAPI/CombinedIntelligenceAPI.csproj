@@ -268,7 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CombinedIntelligence.Data\CombinedIntelligence.Data.csproj">
-      <Project>{4f7ca590-dcc4-4888-a2cc-9f4227c294bd}</Project>
+      <Project>{842f595e-b958-4f91-a2eb-4dde7d37e7d6}</Project>
       <Name>CombinedIntelligence.Data</Name>
     </ProjectReference>
   </ItemGroup>

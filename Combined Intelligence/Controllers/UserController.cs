@@ -9,6 +9,11 @@ namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
+
+		public UserController(User user)
+		{
+
+		}
 		User mockUser = new User();
 		
 		// GET: User

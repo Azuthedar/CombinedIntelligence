@@ -19,6 +19,22 @@ namespace CombinedIntelligence.Data
 		public User()
 		{
 			Tags = new List<Tag>();
+			score = 0;
+		}
+
+		public User(String name, String Email, String Team)
+		{
+			Tags = new List<Tag>();
+		}
+
+		public void AddTag(Tag tag)
+		{
+			Tags.Add(tag);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
 		}
 	}
 }
