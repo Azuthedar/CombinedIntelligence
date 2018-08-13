@@ -126,6 +126,7 @@ table td {
 .tableFormatGrid {
     display: flex;
     width: 95%;
+    height: 20%;
 }
 
 .tableFormatGrid > div {
@@ -138,6 +139,11 @@ table td {
 }
 
 .tableFormatGrid .views {
+    width: 20%;
+    font-size: 1.7vh;
+}
+
+.tableFormatGrid .itemCost {
     width: 20%;
     font-size: 1.7vh;
 }
@@ -168,8 +174,7 @@ table td {
         border-color: black;
         border-width: 0 0 1px 0;
         border-radius: 20px;
-    }
-
+}
 
 div #subscript {
     font-size: 1.3vh;

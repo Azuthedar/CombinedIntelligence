@@ -94,3 +94,4 @@ C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\R
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.csproj.CopyComplete
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.dll
 C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.pdb
+C:\Development\FlashChallenge\CombinedIntelligence\CombinedIntelligenceAPI\obj\Release\CombinedIntelligenceAPI.csprojAssemblyReference.cache
