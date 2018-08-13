@@ -119,6 +119,7 @@ namespace Combined_Intelligence.Controllers
 			ViewBag.userName = mockUser.Name;
 			ViewBag.email = mockUser.Email;
 			ViewBag.team = mockUser.Team;
+
 			ViewBag.score = mockUser.Score;
 			ViewBag.Preferences = mockUser.Tags;
 

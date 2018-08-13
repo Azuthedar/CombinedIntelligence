@@ -16,7 +16,20 @@ namespace Combined_Intelligence
 			routes.MapRoute(
 				name: "Profiles",
 				url: "Profiles/{id}",
-				defaults: new { controller = "User", action = "Profile" });
+				defaults: new { controller = "User", action = "Profile" }
+			);
+
+			routes.MapRoute(
+				name: "ProfileAnswers",
+				url: "Profiles/{id}/Answers",
+				defaults: new { controller = "User", action = "Answers" }
+			);
+
+			routes.MapRoute(
+				name: "ProfileQuestions",
+				url: "Profiles/{id}/Questions",
+				defaults: new { controller = "User", action = "Questions" }
+			);
 
 			routes.MapRoute(
 				name: "Default",

@@ -16,12 +16,6 @@ namespace CombinedIntelligence.Data
 			}
 		}
 
-		public Question()
-		{
-			Votes = new List<Vote>();
-			Tags = new List<Tag>();
-		}
-
 		public Question(int userId, string headerText, string bodyText, List<Tag> tags, DateTime datePosted)
 		{
 			UserId = userId;
