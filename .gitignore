@@ -1,4 +1,4 @@
 *.cache
-/bin
-/Release
-/obj
+*/bin
+*/Release
+*/obj

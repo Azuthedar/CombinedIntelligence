@@ -9,7 +9,6 @@ namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
-
 		#region MockInfo
 		User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
 		List<Question> mockQuestions;
@@ -18,6 +17,34 @@ namespace Combined_Intelligence.Controllers
 
 		public UserController()
 		{
+			Tag.Tags.Add(new Tag("A"));
+			Tag.Tags.Add(new Tag("B"));
+			Tag.Tags.Add(new Tag("C"));
+			Tag.Tags.Add(new Tag("D"));
+			Tag.Tags.Add(new Tag("E"));
+			Tag.Tags.Add(new Tag("F"));
+			Tag.Tags.Add(new Tag("G"));
+			Tag.Tags.Add(new Tag("H"));
+			Tag.Tags.Add(new Tag("I"));
+			Tag.Tags.Add(new Tag("J"));
+			Tag.Tags.Add(new Tag("K"));
+			Tag.Tags.Add(new Tag("L"));
+			Tag.Tags.Add(new Tag("M"));
+			Tag.Tags.Add(new Tag("N"));
+			Tag.Tags.Add(new Tag("O"));
+			Tag.Tags.Add(new Tag("P"));
+			Tag.Tags.Add(new Tag("Q"));
+			Tag.Tags.Add(new Tag("R"));
+			Tag.Tags.Add(new Tag("S"));
+			Tag.Tags.Add(new Tag("T"));
+			Tag.Tags.Add(new Tag("U"));
+			Tag.Tags.Add(new Tag("V"));
+			Tag.Tags.Add(new Tag("W"));
+			Tag.Tags.Add(new Tag("X"));
+			Tag.Tags.Add(new Tag("Y"));
+			Tag.Tags.Add(new Tag("Z"));
+
+
 			mockUser.AddTag(new Tag("C++"));
 			mockUser.AddTag(new Tag("C#"));
 			mockUser.AddTag(new Tag("R"));
@@ -139,13 +166,7 @@ namespace Combined_Intelligence.Controllers
 
 		public ActionResult Profile(int ID)
 		{
-			ViewBag.ID = mockUser.Id;
-			ViewBag.userName = mockUser.Name;
-			ViewBag.email = mockUser.Email;
-			ViewBag.team = mockUser.Team;
-
-			ViewBag.score = mockUser.Score;
-			ViewBag.Preferences = mockUser.Tags;
+			ViewBag.User = mockUser;
 
 			ViewBag.Questions = mockQuestions;
 			ViewBag.Answers = mockAnswers;

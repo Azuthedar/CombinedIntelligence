@@ -94,6 +94,36 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     list-style: none;
 }
 
+.four-col-grid .button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    background-color: rgb(150, 0, 0);
+    color:white;
+}
+
+.four-col-grid .button a {
+    color: white;
+}
+
+.four-col-grid button .button {
+    color: white;
+}
+
+.four-col-grid .button a:visited {
+    text-decoration: none;
+}
+
+.four-col-grid .button a:hover {
+    text-decoration: none;
+}
+
+
+    .four-col-grid .button:hover {
+        background-color: rgb(100, 0, 0);
+        color: rgb(150, 50, 50);
+    }
+
 table {
     table-layout: fixed;
     width: 90%;
