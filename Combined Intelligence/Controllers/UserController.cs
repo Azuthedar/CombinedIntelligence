@@ -46,6 +46,30 @@ namespace Combined_Intelligence.Controllers
 			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
 			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
 			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is the true meaning of Life?", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is 2 + 2", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "What is mathematics", "LoremIpsumExplanation", mockTags, date));
+			mockQuestions.Add(new Question(mockUser.Id, "Templates", "LoremIpsumExplanation", mockTags, date));
 
 			Random amountOfViewers = new Random();
 
@@ -65,7 +89,7 @@ namespace Combined_Intelligence.Controllers
 
 			mockAnswers = new List<Answer>();
 
-			mockAnswers.Add(new Answer(1, mockUser.Id, "LoremIpsumAnswer", date));
+			mockAnswers.Add(new Answer(1, mockUser.Id, "LoremIpsumAnswerLoremIpsum Answer LoremIpsum AnswerL o r e m I p s u m AnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswer LoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswerLoremIpsumAnswer", date));
 			mockAnswers.Add(new Answer(1, mockUser.Id, "LoremIpsumAnswer", date));
 			mockAnswers.Add(new Answer(1, mockUser.Id, "LoremIpsumAnswer", date));
 			mockAnswers.Add(new Answer(1, mockUser.Id, "LoremIpsumAnswer", date));
@@ -93,8 +117,8 @@ namespace Combined_Intelligence.Controllers
 					answer.UpdateVote(new Vote(userId, (VoteTypes)val));
 				}
 			});
-
-
+			mockAnswers[0].Accepted = true;
+			
 			mockRewards = new List<Reward>();
 
 			mockRewards.Add(new Reward("PS4", 500));
@@ -132,11 +156,16 @@ namespace Combined_Intelligence.Controllers
 		}
 		public ActionResult Answers(int ID)
 		{
+
+			ViewBag.User = mockUser;
+			ViewBag.Answers = mockAnswers;
 			return View();
 		}  
 
 		public ActionResult Questions(int ID)
 		{
+			ViewBag.User = mockUser;
+			ViewBag.Questions = mockQuestions;
 			return View();
 		}
 	}

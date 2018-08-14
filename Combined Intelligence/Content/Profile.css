@@ -1,5 +1,9 @@
 ﻿/* grid width: 864px*/
 
+.container a:hover {
+    color: rgb(150, 50, 50) !important;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -33,20 +37,12 @@ html {
     }
 }
 
-@mixin clearfix {
-    &:after {
-        display: table;
-        clear: both;
-        content: '';
-    }
-}
-
 body {
     margin-top: 3rem;
 }
 
-.grid-item {
-    width: calc((100% - 24px * 3) / 3);
+.four-col-grid .grid-item {
+    width: calc((100% - 24px * 6) / 4);
     margin-top: 24px;
     margin-left: 12px;
     margin-right: 12px;
@@ -54,7 +50,7 @@ body {
     float: left;
 }
 
-.grid-item img {
+.four-col-grid .grid-item img {
     width: 80%;
     float: none;
     border-radius: 100%;
@@ -90,17 +86,12 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     border-radius: 20px;
 }
 
-.grid-item p {
+.four-col-grid .grid-item p {
     text-align: left;
 }
 
-.grid-item ul {
+.four-col-grid ul {
     list-style: none;
-}
-
-.grid-item thead {
-    text-align:center;
-    font-weight: 300;
 }
 
 table {
@@ -166,17 +157,75 @@ table td {
 }
 
 .divHeader hr.style-seven:before { /* Not really supposed to work, but does */
-        display: block;
-        content: "";
-        height: 15px;
-        margin-top: -16px;
-        border-style: solid;
-        border-color: black;
-        border-width: 0 0 1px 0;
-        border-radius: 20px;
+    display: block;
+    content: "";
+    height: 15px;
+    margin-top: -16px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }
 
 div #subscript {
     font-size: 1.3vh;
     font-style: italic;
+    user-select: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+.one-col-grid .grid-item {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(200, 200, 200);
+    margin-bottom: 15px;
+}
+
+.one-col-grid:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.one-col-grid .tableFormatGrid .author {
+    width: 10%;
+    font-size: 1.8vh;
+}
+
+.one-col-grid .tableFormatGrid .author:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.one-col-grid .tableFormatGrid .accepted {
+    width: 5%;
+    user-select: none;
+}
+
+.one-col-grid .tableFormatGrid .accepted:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.one-col-grid .tableFormatGrid .answer {
+    width: 50%;
+    font-size: 1.5vh;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.one-col-grid .tableFormatGrid .answerText:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.one-col-grid .tableFormatGrid .score {
+    width: 10%;
+    font-size: 1.8vh;
 }
