@@ -1,0 +1,48 @@
+﻿.two-col-grid .grid-item {
+    float: left;
+    text-align: center;
+}
+
+.two-col-grid:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.two-col-grid .grid-item img {
+    width: 80%;
+    border-radius: 100%;
+}
+
+.two-col-grid .grid-item #userText {
+    color: white;
+    font-size: 1.8vh;
+}
+
+.two-col-grid .grid-item .searchForm {
+    width: 90%;
+    height: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: calc(5% - 3px * 2);
+}
+
+.two-col-grid .grid-item .searchForm input {
+    width: 100%;
+    font-size: 4vh;
+}
+
+.two-col-grid .grid-item .searchForm .button {
+    width: 40%;
+    margin-top: calc(5% - 5px * 3 / 2);
+    margin-right: calc(15% - 2px * 4 / 2);
+    float: left;
+    font-size: 2vh !important;
+}
+
+.two-col-grid .grid-item .searchForm .button:last-child {
+    margin-right: 0px;
+}
+        input {
+    max-width: 100% !important;
+}
