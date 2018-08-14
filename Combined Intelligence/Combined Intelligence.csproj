@@ -212,6 +212,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Profile.cshtml" />
     <Content Include="Views\User\Answers.cshtml" />
+    <Content Include="Views\User\Questions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

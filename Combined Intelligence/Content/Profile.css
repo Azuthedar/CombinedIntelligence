@@ -94,35 +94,40 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     list-style: none;
 }
 
-.four-col-grid .button {
+.button {
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 90%;
     background-color: rgb(150, 0, 0);
     color:white;
+    text-align: center;
 }
 
-.four-col-grid .button a {
+.button a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+button .button {
     color: white;
 }
 
-.four-col-grid button .button {
-    color: white;
-}
-
-.four-col-grid .button a:visited {
+.button a:visited {
     text-decoration: none;
 }
 
-.four-col-grid .button a:hover {
+.button a:hover {
     text-decoration: none;
 }
 
 
-    .four-col-grid .button:hover {
-        background-color: rgb(100, 0, 0);
-        color: rgb(150, 50, 50);
-    }
+.button:hover {
+    background-color: rgb(100, 0, 0);
+    color: rgb(150, 50, 50);
+    text-decoration: none;
+}
 
 table {
     table-layout: fixed;
@@ -251,11 +256,33 @@ html {
     text-overflow: ellipsis;
 }
 
-.one-col-grid .tableFormatGrid .answerText:hover {
+.one-col-grid .tableFormatGrid .answer:hover {
     background-color: rgb(150, 150, 150);
 }
 
 .one-col-grid .tableFormatGrid .score {
     width: 10%;
     font-size: 1.8vh;
+}
+
+.one-col-grid .tableFormatGrid .question {
+    width: 40%;
+    font-size: 1.8vh;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.one-col-grid .tableFormatGrid .question:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.one-col-grid .tableFormatGrid .totalViews {
+    width: 10%;
+    font-size: 1.8vh;
+}
+
+.one-col-grid .tableFormatGrid .questionTags {
+    max-width: 35%;
+    font-size: 1.5vh;
 }

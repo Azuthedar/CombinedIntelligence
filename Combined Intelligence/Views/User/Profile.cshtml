@@ -64,24 +64,24 @@
 		<div class="grid-item">
 			<div class="divHeader">Top Answers<hr class="style-seven" /></div>
 			@{ int answerIt = 0; }
-			@foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
-			{
-				<div class="tableFormatGrid">
-					<div class="score">
-						@answer.VoteScore
-					<br />
-					<span id="subscript">Score</span>
-				</div>
-				<div class="description">@answer.BodyText</div>
-			</div>
-			<hr class="style-two" />
-			answerIt++;
-			if (answerIt >= ViewBag.MaxShown)
-			{
-				break;
-			}
-		}
-			<div class="button"><a href="/Profiles/@ViewBag.Id/Answers">All Answers</a></div>
+			    @foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
+			    {
+				    <div class="tableFormatGrid">
+					    <div class="score">
+						    @answer.VoteScore
+					    <br />
+					    <span id="subscript">Score</span>
+				    </div>
+				    <div class="description">@answer.BodyText</div>
+			        </div>
+			        <hr class="style-two" />
+			        answerIt++;
+			        if (answerIt >= ViewBag.MaxShown)
+			        {
+				        break;
+			    }
+		    }
+                <a class="button" href="/Profiles/@ViewBag.User.Id/Answers"><div class="button">All Answers</div></a>
 		</div>
 		<div class="grid-item">
 			<div class="divHeader">Top Questions<hr class="style-seven" /></div>
@@ -91,24 +91,24 @@
 				<div class="tableFormatGrid">
 					<div class="score">
 						@question.VoteScore
-					<br />
-					<span id="subscript">Score</span>
-				</div>
-				<div class="views">
-					@question.totalViews
-				<br />
-				<span id="subscript">Views</span>
-			</div>
-			<div class="description">@question.HeaderText</div>
-		</div>
-		<hr class="style-two" />
-		questionIt++;
-		if (questionIt >= ViewBag.MaxShown)
-		{
-			break;
-		}
-	}
-			<div class="button"><a href="/Profiles/@ViewBag.Id/Questions">All Questions</a></div>
+					    <br />
+					    <span id="subscript">Score</span>
+				    </div>
+				    <div class="views">
+					    @question.totalViews
+				        <br />
+				        <span id="subscript">Views</span>
+			        </div>
+			        <div class="description">@question.HeaderText</div>
+		        </div>
+		        <hr class="style-two" />
+		        questionIt++;
+		        if (questionIt >= ViewBag.MaxShown)
+		        {
+			        break;
+		        }
+	        }
+                <a class="button" href="/Profiles/@ViewBag.User.Id/Questions"><div class="button">All Questions</div></a>
 		</div>
 		<div class="grid-item">
 			<div class="divHeader">Rewards<hr class="style-seven" /></div>
@@ -130,7 +130,7 @@
 					break;
 				}
 			}
-			<div class="button"><a href="/Rewards/@ViewBag.Id">Redeem Rewards</a></div>
+			<a href="/Rewards/@ViewBag.User.Id" class="button"><div class="button">Redeem Rewards</div></a>
 		</div>
 
 		</div>

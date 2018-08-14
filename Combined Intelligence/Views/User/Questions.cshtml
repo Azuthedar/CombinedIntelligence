@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Questions";
+}
+
+<head>
+    @Styles.Render("~/Content/css");
+</head>
+
+<div class="l-wrap">
+    @foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
+    {
+        <div class="one-col-grid">
+            <div class="grid-item">
+                <div class="tableFormatGrid">
+                    <div class="author">
+                        <strong>@ViewBag.User.Name</strong>
+                        <br />
+                        <span id="subscript">Author</span>
+                    </div>
+                    <div class="question">
+                        <span class="questionHeader">@question.HeaderText</span>
+                        <br />
+                        <span id="subscript">Question - @question.DatePosted</span>
+                    </div>
+                    <div class="questionTags">
+                        @foreach (CombinedIntelligence.Data.Tag tag in question.Tags)
+                        {
+                            <span>@tag.Name, </span>
+                        }
+                        <br />
+                        <span id="subscript">Tags</span>
+                    </div>
+                    <div class="totalViews">
+                        @question.totalViews
+                        <br />
+                        <span id="subscript">Views</span>
+                    </div>
+                    <div class="score">
+                        @{
+                            if (question.VoteScore > 5)
+                            {
+                                <span style="color:green">@question.VoteScore</span>
+                            }
+                            else if (question.VoteScore < -5)
+                            {
+                                <span style="color:red">@question.VoteScore</span>
+                            }
+                            else
+                            {
+                                @question.VoteScore
+                            }
+
+                        }
+                        <br />
+                        <span id="subscript">Score</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <a class="button" href="/Profiles/@ViewBag.User.Id"><div class="button">Return</div></a>
+</div>
