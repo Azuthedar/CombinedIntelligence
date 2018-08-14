@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CombinedIntelligence.Data;
+using Combined_Intelligence.Models;
 
 namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
-
-		#region MockInfo
-		User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
+        #region MockInfo
+        User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
 		List<Question> mockQuestions;
 		List<Answer> mockAnswers;
 		List<Reward> mockRewards;
@@ -115,6 +114,7 @@ namespace Combined_Intelligence.Controllers
 
 		public ActionResult Profile(int ID)
 		{
+            mockUser = getUser(ID);
 			ViewBag.ID = mockUser.Id;
 			ViewBag.userName = mockUser.Name;
 			ViewBag.email = mockUser.Email;
@@ -139,5 +139,26 @@ namespace Combined_Intelligence.Controllers
 		{
 			return View();
 		}
+
+        public User getUser(int ID)
+        {
+            using (CombinedIntelligenceEntities CI = new CombinedIntelligenceEntities())
+            {
+                var result = CI.GetUser(ID).ToList().First();
+                var user = new User()
+                {
+                    UserID = result.UserID,
+                    Email = result.Email,
+                    TeamId = result.TeamId,
+                    Score = result.Score,
+                    FirstNames = result.Name,
+                    //Surname = result.Surname,
+                    Image = result.Image
+                };
+                return user;
+            }
+            
+        }
+
 	}
 }
