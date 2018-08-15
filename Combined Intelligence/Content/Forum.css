@@ -57,6 +57,11 @@ input {
     text-align: center;
 }
 
+.one-col-grid .grid-item .tableFormatGrid .datePosted {
+    width: 10%;
+    font-size: 1.5vh;
+}
+
 .one-col-grid .grid-title-item .tableFormatGrid .views-header {
     width: 5%;
 }
@@ -73,6 +78,6 @@ input {
     width: 10%;
 }
 
-.one-col-grid .grid-title-item .tableFormatGrid .lastPost-header {
+.one-col-grid .grid-title-item .tableFormatGrid .datePosted-header {
     width: 10%;
 }

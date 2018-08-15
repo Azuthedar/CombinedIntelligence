@@ -7,6 +7,8 @@ namespace CombinedIntelligence.Data
 	{
 		public string HeaderText { get; set; }
 		public List<Tag> Tags { get; }
+		//Will potentially need a bool to check if there's an answer that was accepted 
+		public bool HasAcceptedAnswer { set; get;}
 
 		public int totalViews
 		{
@@ -23,7 +25,7 @@ namespace CombinedIntelligence.Data
 			BodyText = bodyText;
 			Tags = tags;
 			DatePosted = datePosted;
-
+			HasAcceptedAnswer = false;
 			Votes = new List<Vote>();
 		}
 
