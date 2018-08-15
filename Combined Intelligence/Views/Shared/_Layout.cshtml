@@ -29,8 +29,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Profile", "Profile", "User")</li>
-                    <li>@Html.ActionLink("Forum", "DisplayForum", "Forum")</li>
+                    <li>@Html.ActionLink("Forum", "Index", "Forum")</li>
                     <li>@Html.ActionLink("Leaderboard", "DisplayLeaderboard", "Leaderboard")</li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                    <li>@Html.ActionLink("Sign Up", "NewUser", "User")</li>
+                    <li>@Html.ActionLink("Login", "Login", "User")</li>
                 </ul>
             </div>
         </div>

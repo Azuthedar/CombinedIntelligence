@@ -13,7 +13,7 @@
             <div class="grid-item" style="width: 20%;">
                 <img src="~/Content/placeholder.png" />
                 <br />
-                <span id="userText">Name: Jooooeee</span>
+                <span id="userText">Jooooeee</span>
                 <br />
                 <span id="userText">Score: 5</span>
             </div>
@@ -25,35 +25,67 @@
                 </form>
             </div>
         </div>
+        <hr class="style-two" />
         <div class="one-col-grid">
-            <div class="grid-item">
+            <div class="grid-title-item">
                 <div class="tableFormatGrid">
-                    <div class="score">
-                        10
-                        <br />
-                        <span id="subscript">Score</span>
+                    <div class="score-header">
+                        Score
                     </div>
-                    <div class="views">
-                        50
-                        <br />
-                        <span id="subscript">Views</span>
+                    <div class="views-header">
+                        Views
                     </div>
-                    <div class="question">
-                        QHeader
-                        <br />
-                        <span id="subscript">Question - TIMESTAMP</span>
+                    <div class="question-header">
+                        Title
                     </div>
-                    <div class="accepted">
-                        YES > GLYPHICON
-                        <br />
-                        <span id="subscript">Accepted Answer</span>
+                    <div class="accepted-header">
+                        Answer accepted
                     </div>
-                    <div class="lastPost">
-                        Piet Pompies
+                    <div class="lastPost-header">
+                        Last Post
                     </div>
                 </div>
             </div>
-
         </div>
+        @foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
+        {
+            <div class="one-col-grid">
+                <div class="grid-item">
+                    <div class="tableFormatGrid">
+                        <div class="score">
+                            @question.VoteScore
+                            <br />
+                            <span id="subscript">Score</span>
+                        </div>
+                        <div class="views">
+                            @question.totalViews
+                            <br />
+                            <span id="subscript">Views</span>
+                        </div>
+                        <div class="question">
+                            @question.HeaderText
+                            <br />
+                            <span id="subscript">Question - TIMESTAMP</span>
+                        </div>
+                        <div class="accepted">
+                            @if (question.HasAcceptedAnswer)
+                            {
+                                <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                            }
+                            else
+                            {
+                                <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                            }
+                            <br />
+                            <span id="subscript">Accepted Answer</span>
+                        </div>
+                        <div class="datePosted">
+                            @question.DatePosted
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
     </div>
 </body>
