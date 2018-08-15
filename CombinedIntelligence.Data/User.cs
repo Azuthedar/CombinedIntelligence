@@ -43,6 +43,7 @@ namespace CombinedIntelligence.Data
 			
 			//Loop through all tags and if it finds a tag with the same name it doesn't add the tag to the array
 			//Could potentially be pretty slow because O(n) time
+            //I'm going to try to optimise this. May have to edit tag class to do so
 			Tags.ForEach(cTag =>
 			{
 				if (cTag.Name == tag.Name)

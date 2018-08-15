@@ -27,9 +27,11 @@ namespace CombinedIntelligence.Data
 			Votes = new List<Vote>();
 		}
 
+        public Question() { Votes = new List<Vote>(); Tags = new List<Tag>(); }
+
 		public void AddTag(Tag tag)
 		{
-			Boolean foundTag = false;
+			/*Boolean foundTag = false;
 
 			//Loop through all tags and if it finds a tag with the same name it doesn't add the tag to the array
 			//Could potentially be pretty slow because O(n) time
@@ -42,7 +44,12 @@ namespace CombinedIntelligence.Data
 			if (!foundTag)
 			{
 				Tags.Add(tag);
-			}
-		}
+			}*/
+            int i = Tags.BinarySearch(tag);
+            if (i < 0)
+                Tags.Insert(~i, tag);
+
+        }
+
 	}
 }

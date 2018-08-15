@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using Combined_Intelligence.Models;
+//using CombinedIntelligenceAPI.Models;
 using CombinedIntelligence.Data;
 
 namespace Combined_Intelligence.Controllers
@@ -133,17 +133,68 @@ namespace Combined_Intelligence.Controllers
 		}
 		public ActionResult Answers(int ID)
 		{
-			return View();
+            List<Answer> ansList = new List<Answer>();
+            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
+            {
+                var result = CI.getUserAnswers(ID).ToList();
+                foreach (var answer in result)
+                {
+                    Answer cur = new Answer()
+                    {
+                        Id = answer.AnswerId,
+                        UserId = answer.UserId,
+                        BodyText = answer.Body,
+                        DatePosted = answer.DatePosted,
+                        Accepted = answer.Accepted == 1,
+                        QuestionId = answer.QuestionId
+                    };
+
+                    var votes = CI.getAVotes(answer.AnswerId).ToList();
+                    foreach (var vote in votes)
+                        cur.Votes.Add(new Vote(vote.UserId, (VoteTypes)vote.Value));
+                    ansList.Add(cur);
+
+                }
+                
+            }
+            return View();
 		}  
 
 		public ActionResult Questions(int ID)
 		{
-			return View();
+            List<Question> qList = new List<Question>();
+            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
+            {
+                var result = CI.getUserQuestions(ID).ToList();
+                foreach (var question in result)
+                {
+                    Question cur = new Question()
+                    {
+                        Id = question.QuestionID,
+                        UserId = ID,
+                        BodyText = question.Body,
+                        DatePosted = question.DatePosted,
+                        HeaderText = question.Header
+                    };
+
+                    var votes = CI.getQVotes(question.QuestionID).ToList();
+                    foreach (var vote in votes)
+                        cur.Votes.Add(new Vote(vote.UserId, (VoteTypes)vote.Value));
+                    qList.Add(cur);
+
+                    var tags = CI.getQTags(question.QuestionID).ToList();
+                    foreach (var tag in tags)
+                        cur.AddTag(new Tag(tag.Name));
+
+                }
+
+            }
+            return View();
 		}
 
         public User getUser(int ID)
         {
-            using (Models.CombinedIntelligenceEntities1 CI = new Models.CombinedIntelligenceEntities1())
+            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
             {
                 var result = CI.GetUser(ID).ToList().First();
                 var user = new User()
