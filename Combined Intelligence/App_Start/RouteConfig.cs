@@ -13,6 +13,8 @@ namespace Combined_Intelligence
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+			/*
+			  
 			routes.MapRoute(
 				name: "Profiles",
 				url: "Profiles/{id}",
@@ -37,6 +39,13 @@ namespace Combined_Intelligence
 				defaults: new { controller = "Forum", action = "Index", id = UrlParameter.Optional }
 			);
 
+			*/
+
+			routes.MapRoute(
+				name: "Default",
+				url: "{controller}/{action}/{id}",
+				defaults: new { controller = "Forum", action = "Index", id = UrlParameter.Optional }
+			);
 		}
 	}
 }

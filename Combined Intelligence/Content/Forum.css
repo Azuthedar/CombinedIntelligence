@@ -43,6 +43,36 @@
 .two-col-grid .grid-item .searchForm .button:last-child {
     margin-right: 0px;
 }
-        input {
+
+input {
     max-width: 100% !important;
+}
+
+.one-col-grid .grid-title-item {
+    width: 100%;
+    font-size: 3vh !important;
+    font-weight: bold;
+    color: white !important;
+    float:left;
+    text-align: center;
+}
+
+.one-col-grid .grid-title-item .tableFormatGrid .views-header {
+    width: 5%;
+}
+
+.one-col-grid .grid-title-item .tableFormatGrid .score-header {
+    width: 5%;
+}
+
+.one-col-grid .grid-title-item .tableFormatGrid .question-header {
+    width: 70%;
+}
+
+.one-col-grid .grid-title-item .tableFormatGrid .accepted-header {
+    width: 10%;
+}
+
+.one-col-grid .grid-title-item .tableFormatGrid .lastPost-header {
+    width: 10%;
 }
