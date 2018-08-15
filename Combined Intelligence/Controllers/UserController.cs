@@ -115,6 +115,9 @@ namespace Combined_Intelligence.Controllers
 
         public ActionResult Profile(int ID)
         {
+            mockUser = getUser(ID);
+            //mockQuestions = CombinedIntelligenceAPI.Controllers.QuestionController
+            ViewBag.User = mockUser;
             ViewBag.ID = mockUser.Id;
             ViewBag.userName = mockUser.Name;
             ViewBag.email = mockUser.Email;
@@ -202,9 +205,9 @@ namespace Combined_Intelligence.Controllers
                     
                     Id = result.UserID,
                     Email = result.Email,
-                    Team = CI.getTeamName(result.TeamId).ToList().First(),
+                    Team = result.Name,
                     Score = result.Score,
-                    Name = result.Name,
+                    Name = result.FirstNames,
                     //Surname = result.Surname,
                     Image = result.Image
                 };

@@ -136,10 +136,10 @@
             <Parameter Name="score" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserAnswers" ReturnType="Collection(CombinedIntelligenceModel.getUserAnswers_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserQuestions" ReturnType="Collection(CombinedIntelligenceModel.getUserQuestions_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetAnswers_Result">
@@ -177,6 +177,8 @@
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="Score" Nullable="false" />
           <Property Type="String" Name="Image" Nullable="true" />
+          <Property Type="String" Name="FirstNames" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Surname" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="GetUserLogin_Result">
           <Property Type="Int32" Name="UserID" Nullable="false" />
@@ -275,6 +277,8 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="FirstNames" ColumnName="FirstNames" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
