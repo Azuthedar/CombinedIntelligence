@@ -18,5 +18,7 @@ namespace CombinedIntelligence.Data
 
 			Votes = new List<Vote>();
 		}
+
+        public Answer() { Votes = new List<Vote>(); }
 	}
 }

@@ -8,10 +8,10 @@ namespace CombinedIntelligence.Data
 		/*TEMP*/
 		public static int IDCOUNTER = 0;
 
-		public int Id { get; }
-		public string Name { get; }
-		public string Email { get; }
-		public string Team { get; }
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public string Email { get; set; }
+		public string Team { get; set; }
 		public string Image { get; set; }
 		public int Score { get; set; }
 		public List<Tag> Tags { get; }
@@ -43,6 +43,7 @@ namespace CombinedIntelligence.Data
 			
 			//Loop through all tags and if it finds a tag with the same name it doesn't add the tag to the array
 			//Could potentially be pretty slow because O(n) time
+            //I'm going to try to optimise this. May have to edit tag class to do so
 			Tags.ForEach(cTag =>
 			{
 				if (cTag.Name == tag.Name)

@@ -200,3 +200,5 @@ C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntel
 C:\Development\FlashChallenge\Hackathon\CombinedIntelligence_CLONE\CombinedIntelligenceAPI\bin\CombinedIntelligence.Data.pdb
 =======
 >>>>>>> parent of ddfcdde... Fixed data project
+C:\Users\Bbdnet1696\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.csprojAssemblyReference.cache
+C:\Users\Bbdnet1696\CombinedIntelligence\CombinedIntelligenceAPI\obj\Debug\CombinedIntelligenceAPI.csproj.CoreCompileInputs.cache

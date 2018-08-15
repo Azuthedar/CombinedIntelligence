@@ -9,6 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combined Intelligence", "Co
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinedIntelligenceAPI", "CombinedIntelligenceAPI\CombinedIntelligenceAPI.csproj", "{69951AA8-2F9A-4832-93C5-182A99261BCA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19A8A97B-8EF5-476D-9984-FCEE5D43A3BC} = {19A8A97B-8EF5-476D-9984-FCEE5D43A3BC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinedIntelligence.Data", "CombinedIntelligence.Data\CombinedIntelligence.Data.csproj", "{19A8A97B-8EF5-476D-9984-FCEE5D43A3BC}"
 EndProject
