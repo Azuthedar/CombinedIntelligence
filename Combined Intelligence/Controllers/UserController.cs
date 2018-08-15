@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Combined_Intelligence.Models;
+//using Combined_Intelligence.Models;
+using CombinedIntelligence.Data;
 
 namespace Combined_Intelligence.Controllers
 {
@@ -114,7 +115,7 @@ namespace Combined_Intelligence.Controllers
 
 		public ActionResult Profile(int ID)
 		{
-            mockUser = getUser(ID);
+            //mockUser = getUser(ID);
 			ViewBag.ID = mockUser.Id;
 			ViewBag.userName = mockUser.Name;
 			ViewBag.email = mockUser.Email;
@@ -142,19 +143,26 @@ namespace Combined_Intelligence.Controllers
 
         public User getUser(int ID)
         {
-            using (CombinedIntelligenceEntities CI = new CombinedIntelligenceEntities())
+            using (Models.CombinedIntelligenceEntities1 CI = new Models.CombinedIntelligenceEntities1())
             {
                 var result = CI.GetUser(ID).ToList().First();
                 var user = new User()
                 {
-                    UserID = result.UserID,
+                    
+                    Id = result.UserID,
                     Email = result.Email,
-                    TeamId = result.TeamId,
+                    Team = CI.getTeamName(result.TeamId).ToList().First(),
                     Score = result.Score,
-                    FirstNames = result.Name,
+                    Name = result.Name,
                     //Surname = result.Surname,
                     Image = result.Image
                 };
+
+                var tagList = CI.getUserTags(ID).ToList();
+                foreach (var tag in tagList)
+                {
+                    user.AddTag(new Tag(tag));
+                }
                 return user;
             }
             
