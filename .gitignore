@@ -1,4 +1,7 @@
 *.cache
-/bin
-/Release
-/obj
+Combined\ Intelligence/bin/
+Combined\ Intelligence/obj/
+CombinedIntelligence.Data/bin/
+CombinedIntelligence.Data/obj/
+CombinedIntelligenceAPI/bin/
+CombinedIntelligenceAPI/obj/

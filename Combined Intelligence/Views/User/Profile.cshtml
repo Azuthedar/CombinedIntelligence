@@ -1,106 +1,137 @@
 ﻿
 @{
-    ViewBag.Title = "Profile";
-    ViewBag.MaxShown = 10;
+	ViewBag.Title = "Profile";
+	ViewBag.MaxShown = 10;
 }
 <head>
-    @Styles.Render("~/Content/css")
+	@Styles.Render("~/Content/css")
 </head>
 
 
 <div class="l-wrap">
-    <div class="four-col-grid">
-        <div class="grid-item">
-            <br />
-            <img src="~/Content/placeholder.png" />
-            <hr class='style-seven' />
-            <br />
-            <p>Name: @ViewBag.userName</p>
-            <p>Score: @ViewBag.score</p>
-            <p>Team: @ViewBag.team</p>
-            <p>Email: @ViewBag.email</p>
-            <p>
-                Preferences:
-                <ul>
-                    <li>
-                        @foreach (CombinedIntelligence.Data.Tag item in ViewBag.Preferences)
-                        {
-                            <span><i>@item.Name</i>, </span>
-                        }
-                    </li>
-                </ul>
+	<div class="four-col-grid">
+		<div class="grid-item">
+			<br />
+			<img src="~/Content/placeholder.png" />
+			<hr class='style-seven' />
+			<br />
+			<p>Name: @ViewBag.User.Name</p>
+			<p>Score: @ViewBag.User.Score</p>
+			<p>Team: @ViewBag.User.Team</p>
+			<p>Email: @ViewBag.User.Email</p>
+			<p>
+				Preferences:
+				<ul>
+					<li>
+						@foreach (CombinedIntelligence.Data.Tag item in ViewBag.User.Tags)
+						{
+							<span><i>@item.Name</i>, </span>
+						}
+					</li>
+				</ul>
 
-            </p>
-            </div>
-        <div class="grid-item">
-            <div class="divHeader">Top Answers<hr class="style-seven" /></div>
-            @{ int answerIt = 0; }
-            @foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
-            {
-                <div class="tableFormatGrid">
-                    <div class="score">@answer.VoteScore
-                    <br/>
-                    <span id="subscript">Score</span>
-                </div>
-                <!--<div class="views">100
-                    <br />
-                    <span id="subscript">Views</span>
-                </div> -->
-                <div class="description">@answer.BodyText</div>
-                </div>
-                <hr class="style-two" />
-                answerIt++;
-                if (answerIt >= ViewBag.MaxShown)
-                {
-                    break;
-                }
-            }
-        </div>
-        <div class="grid-item">
-            <div class="divHeader">Top Questions<hr class="style-seven" /></div>
-            @{ int questionIt = 0; }
-            @foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
-            {
-                <div class="tableFormatGrid">
-                    <div class="score">@question.VoteScore
-                        <br />
-                        <span id="subscript">Score</span>
-                    </div>
-                    <div class="views">@question.totalViews
-                        <br />
-                        <span id="subscript">Views</span>
-                    </div>
-                    <div class="description">@question.HeaderText</div>
-                </div>
-                <hr class="style-two" />
-                questionIt++;
-                if (questionIt >= ViewBag.MaxShown)
-                {
-                    break;
-                }
-            }
-        </div>
-        <div class="grid-item">
-            <div class="divHeader">Rewards<hr class="style-seven"/></div>
-            @{ int rewardIt = 0; }
-            @foreach (CombinedIntelligence.Data.Reward reward in ViewBag.Rewards)
-            {
-                <div class="tableFormatGrid">
-                    <div class="score"><span style="color:red">@reward.Cost</span>
-                        <br />
-                        <span id="subscript">Cost</span>
-                    </div>
-                    <div class="description">@reward.BodyText</div>
-                </div>
-                <hr class="style-two" />
-                rewardIt++;
-                if (rewardIt >= ViewBag.MaxShown)
-                {
-                    break;
-                }
+			</p>
+			<button class="button" data-toggle="modal" data-target="#PreferencesModal">Preferences</button>
 
-            }
-        </div>
+			<div id="PreferencesModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h2 class="modal-title">Preferences</h2>
+						</div>
+						<div class="modal-body">
+							@foreach (CombinedIntelligence.Data.Tag tag in CombinedIntelligence.Data.Tag.Tags)
+							{
+								<span>@tag.Name <input type="checkbox" name="preferenceCheck"/>&#09;</span>
+								if (Html.CheckBox("preferenceCheck").ToString() == "true")
+								{
+									ViewBag.User.AddTag(tag);
+									@tag.Name
+								}
 
-    </div>
+
+							}
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid-item">
+			<div class="divHeader">Top Answers<hr class="style-seven" /></div>
+			@{ int answerIt = 0; }
+			    @foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
+			    {
+				    <div class="tableFormatGrid">
+					    <div class="score">
+						    @answer.VoteScore
+					    <br />
+					    <span id="subscript">Score</span>
+				    </div>
+				    <div class="description">@answer.BodyText</div>
+			        </div>
+			        <hr class="style-two" />
+			        answerIt++;
+			        if (answerIt >= ViewBag.MaxShown)
+			        {
+				        break;
+			    }
+		    }
+                <a class="button" href="/Profiles/@ViewBag.User.Id/Answers"><div class="button">All Answers</div></a>
+		</div>
+		<div class="grid-item">
+			<div class="divHeader">Top Questions<hr class="style-seven" /></div>
+			@{ int questionIt = 0; }
+			@foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
+			{
+				<div class="tableFormatGrid">
+					<div class="score">
+						@question.VoteScore
+					    <br />
+					    <span id="subscript">Score</span>
+				    </div>
+				    <div class="views">
+					    @question.totalViews
+				        <br />
+				        <span id="subscript">Views</span>
+			        </div>
+			        <div class="description">@question.HeaderText</div>
+		        </div>
+		        <hr class="style-two" />
+		        questionIt++;
+		        if (questionIt >= ViewBag.MaxShown)
+		        {
+			        break;
+		        }
+	        }
+                <a class="button" href="/Profiles/@ViewBag.User.Id/Questions"><div class="button">All Questions</div></a>
+		</div>
+		<div class="grid-item">
+			<div class="divHeader">Rewards<hr class="style-seven" /></div>
+			@{ int rewardIt = 0; }
+			@foreach (CombinedIntelligence.Data.Reward reward in ViewBag.Rewards)
+			{
+				<div class="tableFormatGrid">
+					<div class="score">
+						<span style="color:red">@reward.Cost</span>
+						<br />
+						<span id="subscript">Cost</span>
+					</div>
+					<div class="description">@reward.BodyText</div>
+				</div>
+				<hr class="style-two" />
+				rewardIt++;
+				if (rewardIt >= ViewBag.MaxShown)
+				{
+					break;
+				}
+			}
+			<a href="/Rewards/@ViewBag.User.Id" class="button"><div class="button">Redeem Rewards</div></a>
+		</div>
+
+		</div>
 </div>
