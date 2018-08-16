@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+
+}
+<head>
+    @Styles.Render("~/Content/css")
+</head>
+
+<body>
+    <div class="post-wrap">
+        <div class="one-col-grid">
+            <div class="question">
+                <div id="questionHeader">
+                    @ViewBag.Question.HeaderText
+                </div>
+                <hr />
+                <br />
+                <div class="tableFormatGrid">
+                    <div id="score">
+                        @ViewBag.Question.VoteScore
+                        <br />
+                        <span id="subscript">Score</span>
+                    </div>
+                    <div id="bodyText">
+                        <p>@ViewBag.Question.BodyText</p>
+                    </div>
+                </div>
+                </br>
+                <div id="footer">
+                    <div id="author">
+                        @ViewBag.Questionee.Name
+                    </div>
+                    <div id="subscript">@ViewBag.Question.DatePosted</div>
+                </div>
+                <br />
+                <hr class="style-seven" />
+            </div>
+            @foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
+            {
+                <div class="answer">
+                    
+                    <div class="tableFormatGrid">
+                        <div id="scoreAndAccepted">
+                            @answer.VoteScore
+                            @if (answer.Accepted)
+                            {
+                                <span class="glyphicon glyphicon-ok" style="color: green;"></span>
+                            }
+                            else
+                            {
+                                <span class="glyphicon glyphicon-remove" style="color: red;"></span>
+                            }
+                        </div>
+                        <div id="bodyText">
+                            @answer.BodyText
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div id="author">@ViewBag.Answerer.Name</div>
+                        <div id="subscript">@answer.DatePosted</div>
+                    </div>
+                </div>
+                <br />
+                <hr class="style-two"/>
+            }
+            <form>
+                <textarea placeholder="Insert text here..." rows="15"></textarea>
+            </form>
+            
+        </div>
+        
+    </div>
+
+</body>
+

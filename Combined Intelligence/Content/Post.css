@@ -1,0 +1,57 @@
+﻿.post-wrap {
+    max-width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(210, 210, 210);
+    align-content: center;
+}
+
+.post-wrap .one-col-grid {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.post-wrap .one-col-grid .question #questionHeader {
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.post-wrap .one-col-grid .question .tableFormatGrid #bodyText {
+    font-size: 1.8vh;
+    width: 70%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+}
+
+.post-wrap .one-col-grid .question #score {
+    font-size: 1.9vh;
+    float: left;
+    max-width: 10%;
+    width: 10%;
+
+}
+
+.post-wrap .one-col-grid .answer .tableFormatGrid #scoreAndAccepted {
+    font-size: 1.9vh;
+    float:left;
+    width: 15%;
+    max-width: 15%;
+}
+
+.post-wrap .one-col-grid #footer {
+    float:right;
+    font-size: 1.5vh;
+}
+
+textarea {
+    max-width: 100% !important;
+    width: 100%;
+    max-height: 20% !important;
+    height: 20%;
+    resize: none;
+}
