@@ -10,14 +10,18 @@ namespace Combined_Intelligence.Controllers
 {
 	public class UserController : Controller
 	{
+
+        CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities();
         #region MockInfo
         User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
         List<Question> mockQuestions;
         List<Answer> mockAnswers;
         List<Reward> mockRewards;
+        
 
         public UserController()
         {
+
             mockUser.AddTag(new Tag("C++"));
             mockUser.AddTag(new Tag("C#"));
             mockUser.AddTag(new Tag("R"));
@@ -116,7 +120,9 @@ namespace Combined_Intelligence.Controllers
         public ActionResult Profile(int ID)
         {
             mockUser = getUser(ID);
-            //mockQuestions = CombinedIntelligenceAPI.Controllers.QuestionController
+            mockQuestions = GetQuestions(ID);
+            mockAnswers = GetAnswers(ID);
+            //mockRewards = getRewards();
             ViewBag.User = mockUser;
             ViewBag.ID = mockUser.Id;
             ViewBag.userName = mockUser.Name;
@@ -136,37 +142,47 @@ namespace Combined_Intelligence.Controllers
 
         public ActionResult Answers(int ID)
 		{
-            List<Answer> ansList = new List<Answer>();
-            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
-            {
-                var result = CI.getUserAnswers(ID).ToList();
-                foreach (var answer in result)
-                {
-                    Answer cur = new Answer()
-                    {
-                        Id = answer.AnswerId,
-                        UserId = answer.UserId,
-                        BodyText = answer.Body,
-                        DatePosted = answer.DatePosted,
-                        Accepted = answer.Accepted == 1,
-                        QuestionId = answer.QuestionId
-                    };
-
-                    var votes = CI.getAVotes(answer.AnswerId).ToList();
-                    foreach (var vote in votes)
-                        cur.Votes.Add(new Vote(vote.UserId, (VoteTypes)vote.Value));
-                    ansList.Add(cur);
-
-                }
-                
-            }
+            
             return View();
 		}  
 
 		public ActionResult Questions(int ID)
 		{
+            
+            return View();
+		}
+
+        public User getUser(int ID)
+        {
+            using (CI)
+            {
+                var result = CI.GetUser(ID).ToList().First();
+                var user = new User()
+                {
+                    
+                    Id = result.UserID,
+                    Email = result.Email,
+                    Team = result.Name,
+                    Score = result.Score,
+                    Name = result.FirstNames,
+                    //Surname = result.Surname,
+                    Image = result.Image
+                };
+
+                var tagList = CI.getUserTags(ID).ToList();
+                foreach (var tag in tagList)
+                {
+                    user.AddTag(new Tag(tag));
+                }
+                return user;
+            }
+            
+        }
+
+        public List<Question> GetQuestions(int ID)
+        {
             List<Question> qList = new List<Question>();
-            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
+            using (CI)
             {
                 var result = CI.getUserQuestions(ID).ToList();
                 foreach (var question in result)
@@ -192,34 +208,36 @@ namespace Combined_Intelligence.Controllers
                 }
 
             }
-            return View();
-		}
+            return qList;
+        }
 
-        public User getUser(int ID)
+        public List<Answer> GetAnswers(int ID)
         {
-            using (CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
+            List<Answer> ansList = new List<Answer>();
+            using (CI)
             {
-                var result = CI.GetUser(ID).ToList().First();
-                var user = new User()
+                var result = CI.getUserAnswers(ID).ToList();
+                foreach (var answer in result)
                 {
-                    
-                    Id = result.UserID,
-                    Email = result.Email,
-                    Team = result.Name,
-                    Score = result.Score,
-                    Name = result.FirstNames,
-                    //Surname = result.Surname,
-                    Image = result.Image
-                };
+                    Answer cur = new Answer()
+                    {
+                        Id = answer.AnswerId,
+                        UserId = answer.UserId,
+                        BodyText = answer.Body,
+                        DatePosted = answer.DatePosted,
+                        Accepted = answer.Accepted == 1,
+                        QuestionId = answer.QuestionId
+                    };
 
-                var tagList = CI.getUserTags(ID).ToList();
-                foreach (var tag in tagList)
-                {
-                    user.AddTag(new Tag(tag));
+                    var votes = CI.getAVotes(answer.AnswerId).ToList();
+                    foreach (var vote in votes)
+                        cur.Votes.Add(new Vote(vote.UserId, (VoteTypes)vote.Value));
+                    ansList.Add(cur);
+
                 }
-                return user;
+
             }
-            
+            return ansList;
         }
 
 	}
