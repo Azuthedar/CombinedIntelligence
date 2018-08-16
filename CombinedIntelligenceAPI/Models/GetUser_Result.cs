@@ -14,12 +14,12 @@ namespace CombinedIntelligenceAPI.Models
     public partial class GetUser_Result
     {
         public int UserID { get; set; }
+        public string FirstNames { get; set; }
+        public string Surname { get; set; }
         public string Email { get; set; }
         public int TeamId { get; set; }
         public string Name { get; set; }
         public int Score { get; set; }
         public string Image { get; set; }
-        public string FirstNames { get; set; }
-        public string Surname { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Combined_Intelligence.Controllers
 	public class UserController : Controller
 	{
 
-        CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities();
+        CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI;
         #region MockInfo
         User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
         List<Question> mockQuestions;
@@ -154,7 +154,7 @@ namespace Combined_Intelligence.Controllers
 
         public User getUser(int ID)
         {
-            using (CI)
+            using (CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
             {
                 var result = CI.GetUser(ID).ToList().First();
                 var user = new User()
@@ -182,7 +182,7 @@ namespace Combined_Intelligence.Controllers
         public List<Question> GetQuestions(int ID)
         {
             List<Question> qList = new List<Question>();
-            using (CI)
+            using (CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
             {
                 var result = CI.getUserQuestions(ID).ToList();
                 foreach (var question in result)
@@ -214,7 +214,7 @@ namespace Combined_Intelligence.Controllers
         public List<Answer> GetAnswers(int ID)
         {
             List<Answer> ansList = new List<Answer>();
-            using (CI)
+            using (CI = new CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities())
             {
                 var result = CI.getUserAnswers(ID).ToList();
                 foreach (var answer in result)

@@ -4,13 +4,34 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CombinedIntelligenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CombinedIntelligenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="AcceptAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AnswerId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddAnswer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QuestionId" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="Body" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="AddQTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="int" Mode="In" />
+          <Parameter Name="QID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="Header" Type="varchar" Mode="In" />
+          <Parameter Name="Body" Type="varchar(max)" Mode="In" />
         </Function>
         <Function Name="addQuestionTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="QuestionId" Type="int" Mode="In" />
           <Parameter Name="TagId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tagname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddUserPreference" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TagId" Type="int" Mode="In" />
+          <Parameter Name="UID" Type="int" Mode="In" />
         </Function>
         <Function Name="getAllQuestions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetAnswers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -47,6 +68,14 @@
         <Function Name="getUserTags" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserID" Type="int" Mode="In" />
         </Function>
+        <Function Name="RegisterUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="TeamId" Type="int" Mode="In" />
+          <Parameter Name="FirstNames" Type="varchar" Mode="In" />
+          <Parameter Name="Surname" Type="varchar" Mode="In" />
+          <Parameter Name="Image" Type="varchar(max)" Mode="In" />
+        </Function>
         <Function Name="SplitTagIds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="List" Type="varchar(max)" Mode="In" />
           <Parameter Name="Delimiter" Type="char" Mode="In" />
@@ -73,7 +102,8 @@
           <Parameter Name="score" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="CombinedIntelligenceModelStoreContainer" />
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CombinedIntelligenceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -86,40 +116,75 @@
             <Parameter Name="Delimiter" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AcceptAns">
-          <Parameter Name="AnswerId" Mode="In" Type="Int32" />
+            <Parameter Name="AnswerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddAnswer" ReturnType="Collection(CombinedIntelligenceModel.AddAnswer_Result)">
+            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="Body" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddQTag" ReturnType="Collection(Int32)">
+            <Parameter Name="TagId" Mode="In" Type="Int32" />
+            <Parameter Name="QID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddQuestion" ReturnType="Collection(CombinedIntelligenceModel.AddQuestion_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="Header" Mode="In" Type="String" />
+            <Parameter Name="Body" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="addQuestionTag">
             <Parameter Name="QuestionId" Mode="In" Type="Int32" />
             <Parameter Name="TagId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="AddTag" ReturnType="Collection(Int32)">
+            <Parameter Name="Tagname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddUserPreference" ReturnType="Collection(Int32)">
+            <Parameter Name="TagId" Mode="In" Type="Int32" />
+            <Parameter Name="UID" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="getAllQuestions" />
           <FunctionImport Name="GetAnswers" ReturnType="Collection(CombinedIntelligenceModel.GetAnswers_Result)">
-          <Parameter Name="QID" Mode="In" Type="Int32" />
+            <Parameter Name="QID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getAVotes" ReturnType="Collection(CombinedIntelligenceModel.getAVotes_Result)">
-          <Parameter Name="AnswerId" Mode="In" Type="Int32" />
+            <Parameter Name="AnswerId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getQTags" ReturnType="Collection(CombinedIntelligenceModel.getQTags_Result)">
-          <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetQuestions" ReturnType="Collection(CombinedIntelligenceModel.GetQuestions_Result)">
-          <Parameter Name="Tags" Mode="In" Type="String" />
+            <Parameter Name="Tags" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getQVotes" ReturnType="Collection(CombinedIntelligenceModel.getQVotes_Result)">
-          <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getTeamName" ReturnType="Collection(String)">
-          <Parameter Name="TeamID" Mode="In" Type="Int32" />
+            <Parameter Name="TeamID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUser" ReturnType="Collection(CombinedIntelligenceModel.GetUser_Result)">
-          <Parameter Name="UID" Mode="In" Type="Int32" />
+            <Parameter Name="UID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getUserAnswers" ReturnType="Collection(CombinedIntelligenceModel.getUserAnswers_Result)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUserLogin" ReturnType="Collection(CombinedIntelligenceModel.GetUserLogin_Result)">
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="getUserQuestions" ReturnType="Collection(CombinedIntelligenceModel.getUserQuestions_Result)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="getUserTags" ReturnType="Collection(String)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RegisterUser" ReturnType="Collection(Int32)">
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="TeamId" Mode="In" Type="Int32" />
+            <Parameter Name="FirstNames" Mode="In" Type="String" />
+            <Parameter Name="Surname" Mode="In" Type="String" />
+            <Parameter Name="Image" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="updateAVote">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
@@ -135,13 +200,15 @@
             <Parameter Name="UserID" Mode="In" Type="Int32" />
             <Parameter Name="score" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getUserAnswers" ReturnType="Collection(CombinedIntelligenceModel.getUserAnswers_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="getUserQuestions" ReturnType="Collection(CombinedIntelligenceModel.getUserQuestions_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
-          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="AddAnswer_Result">
+          <Property Type="Int32" Name="AnswerId" Nullable="false" />
+          <Property Type="DateTime" Name="DatePosted" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="AddQuestion_Result">
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="DateTime" Name="DatePosted" Nullable="false" Precision="23" />
+        </ComplexType>
         <ComplexType Name="GetAnswers_Result">
           <Property Type="Int32" Name="AnswerID" Nullable="false" />
           <Property Type="Int32" Name="UserId" Nullable="false" />
@@ -172,16 +239,8 @@
         </ComplexType>
         <ComplexType Name="GetUser_Result">
           <Property Type="Int32" Name="UserID" Nullable="false" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
-          <Property Type="Int32" Name="TeamId" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
-          <Property Type="Int32" Name="Score" Nullable="false" />
-          <Property Type="String" Name="Image" Nullable="true" />
           <Property Type="String" Name="FirstNames" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Surname" Nullable="false" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="GetUserLogin_Result">
-          <Property Type="Int32" Name="UserID" Nullable="false" />
           <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="TeamId" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
@@ -195,6 +254,14 @@
           <Property Type="String" Name="Body" Nullable="false" />
           <Property Type="DateTime" Name="DatePosted" Nullable="false" Precision="23" />
           <Property Type="Byte" Name="Accepted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetUserLogin_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="TeamId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="String" Name="Image" Nullable="true" />
         </ComplexType>
         <ComplexType Name="getUserQuestions_Result">
           <Property Type="Int32" Name="QuestionID" Nullable="false" />
@@ -217,7 +284,26 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="AcceptAns" FunctionName="CombinedIntelligenceModel.Store.AcceptAns" />
+          <FunctionImportMapping FunctionImportName="AddAnswer" FunctionName="CombinedIntelligenceModel.Store.AddAnswer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CombinedIntelligenceModel.AddAnswer_Result">
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AddQTag" FunctionName="CombinedIntelligenceModel.Store.AddQTag" />
+          <FunctionImportMapping FunctionImportName="AddQuestion" FunctionName="CombinedIntelligenceModel.Store.AddQuestion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CombinedIntelligenceModel.AddQuestion_Result">
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="addQuestionTag" FunctionName="CombinedIntelligenceModel.Store.addQuestionTag" />
+          <FunctionImportMapping FunctionImportName="AddTag" FunctionName="CombinedIntelligenceModel.Store.AddTag" />
+          <FunctionImportMapping FunctionImportName="AddUserPreference" FunctionName="CombinedIntelligenceModel.Store.AddUserPreference" />
           <FunctionImportMapping FunctionImportName="getAllQuestions" FunctionName="CombinedIntelligenceModel.Store.getAllQuestions" />
           <FunctionImportMapping FunctionImportName="GetAnswers" FunctionName="CombinedIntelligenceModel.Store.GetAnswers">
             <ResultMapping>
@@ -272,13 +358,25 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="CombinedIntelligenceModel.GetUser_Result">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstNames" ColumnName="FirstNames" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="FirstNames" ColumnName="FirstNames" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUserAnswers" FunctionName="CombinedIntelligenceModel.Store.getUserAnswers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CombinedIntelligenceModel.getUserAnswers_Result">
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+                <ScalarProperty Name="Accepted" ColumnName="Accepted" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -294,22 +392,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="getUserTags" FunctionName="CombinedIntelligenceModel.Store.getUserTags" />
-          <FunctionImportMapping FunctionImportName="updateAVote" FunctionName="CombinedIntelligenceModel.Store.updateAVote" />
-          <FunctionImportMapping FunctionImportName="updateQVote" FunctionName="CombinedIntelligenceModel.Store.updateQVote" />
-          <FunctionImportMapping FunctionImportName="updateScore" FunctionName="CombinedIntelligenceModel.Store.updateScore" />
-          <FunctionImportMapping FunctionImportName="getUserAnswers" FunctionName="CombinedIntelligenceModel.Store.getUserAnswers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CombinedIntelligenceModel.getUserAnswers_Result">
-                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Body" ColumnName="Body" />
-                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
-                <ScalarProperty Name="Accepted" ColumnName="Accepted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getUserQuestions" FunctionName="CombinedIntelligenceModel.Store.getUserQuestions">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CombinedIntelligenceModel.getUserQuestions_Result">
@@ -321,6 +403,11 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUserTags" FunctionName="CombinedIntelligenceModel.Store.getUserTags" />
+          <FunctionImportMapping FunctionImportName="RegisterUser" FunctionName="CombinedIntelligenceModel.Store.RegisterUser" />
+          <FunctionImportMapping FunctionImportName="updateAVote" FunctionName="CombinedIntelligenceModel.Store.updateAVote" />
+          <FunctionImportMapping FunctionImportName="updateQVote" FunctionName="CombinedIntelligenceModel.Store.updateQVote" />
+          <FunctionImportMapping FunctionImportName="updateScore" FunctionName="CombinedIntelligenceModel.Store.updateScore" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

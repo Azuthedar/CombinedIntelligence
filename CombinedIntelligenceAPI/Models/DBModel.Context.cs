@@ -51,6 +51,53 @@ namespace CombinedIntelligenceAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AcceptAns", answerIdParameter);
         }
     
+        public virtual ObjectResult<AddAnswer_Result> AddAnswer(Nullable<int> questionId, Nullable<int> userId, string body)
+        {
+            var questionIdParameter = questionId.HasValue ?
+                new ObjectParameter("QuestionId", questionId) :
+                new ObjectParameter("QuestionId", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var bodyParameter = body != null ?
+                new ObjectParameter("Body", body) :
+                new ObjectParameter("Body", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AddAnswer_Result>("AddAnswer", questionIdParameter, userIdParameter, bodyParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> AddQTag(Nullable<int> tagId, Nullable<int> qID)
+        {
+            var tagIdParameter = tagId.HasValue ?
+                new ObjectParameter("TagId", tagId) :
+                new ObjectParameter("TagId", typeof(int));
+    
+            var qIDParameter = qID.HasValue ?
+                new ObjectParameter("QID", qID) :
+                new ObjectParameter("QID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddQTag", tagIdParameter, qIDParameter);
+        }
+    
+        public virtual ObjectResult<AddQuestion_Result> AddQuestion(Nullable<int> userId, string header, string body)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var headerParameter = header != null ?
+                new ObjectParameter("Header", header) :
+                new ObjectParameter("Header", typeof(string));
+    
+            var bodyParameter = body != null ?
+                new ObjectParameter("Body", body) :
+                new ObjectParameter("Body", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AddQuestion_Result>("AddQuestion", userIdParameter, headerParameter, bodyParameter);
+        }
+    
         public virtual int addQuestionTag(Nullable<int> questionId, Nullable<int> tagId)
         {
             var questionIdParameter = questionId.HasValue ?
@@ -62,6 +109,28 @@ namespace CombinedIntelligenceAPI.Models
                 new ObjectParameter("TagId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addQuestionTag", questionIdParameter, tagIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> AddTag(string tagname)
+        {
+            var tagnameParameter = tagname != null ?
+                new ObjectParameter("Tagname", tagname) :
+                new ObjectParameter("Tagname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddTag", tagnameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> AddUserPreference(Nullable<int> tagId, Nullable<int> uID)
+        {
+            var tagIdParameter = tagId.HasValue ?
+                new ObjectParameter("TagId", tagId) :
+                new ObjectParameter("TagId", typeof(int));
+    
+            var uIDParameter = uID.HasValue ?
+                new ObjectParameter("UID", uID) :
+                new ObjectParameter("UID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddUserPreference", tagIdParameter, uIDParameter);
         }
     
         public virtual int getAllQuestions()
@@ -132,6 +201,15 @@ namespace CombinedIntelligenceAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetUser_Result>("GetUser", uIDParameter);
         }
     
+        public virtual ObjectResult<getUserAnswers_Result> getUserAnswers(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getUserAnswers_Result>("getUserAnswers", userIDParameter);
+        }
+    
         public virtual ObjectResult<GetUserLogin_Result> GetUserLogin(string email, string password)
         {
             var emailParameter = email != null ?
@@ -145,6 +223,15 @@ namespace CombinedIntelligenceAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetUserLogin_Result>("GetUserLogin", emailParameter, passwordParameter);
         }
     
+        public virtual ObjectResult<getUserQuestions_Result> getUserQuestions(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getUserQuestions_Result>("getUserQuestions", userIDParameter);
+        }
+    
         public virtual ObjectResult<string> getUserTags(Nullable<int> userID)
         {
             var userIDParameter = userID.HasValue ?
@@ -152,6 +239,35 @@ namespace CombinedIntelligenceAPI.Models
                 new ObjectParameter("UserID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("getUserTags", userIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> RegisterUser(string password, string email, Nullable<int> teamId, string firstNames, string surname, string image)
+        {
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var teamIdParameter = teamId.HasValue ?
+                new ObjectParameter("TeamId", teamId) :
+                new ObjectParameter("TeamId", typeof(int));
+    
+            var firstNamesParameter = firstNames != null ?
+                new ObjectParameter("FirstNames", firstNames) :
+                new ObjectParameter("FirstNames", typeof(string));
+    
+            var surnameParameter = surname != null ?
+                new ObjectParameter("Surname", surname) :
+                new ObjectParameter("Surname", typeof(string));
+    
+            var imageParameter = image != null ?
+                new ObjectParameter("Image", image) :
+                new ObjectParameter("Image", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("RegisterUser", passwordParameter, emailParameter, teamIdParameter, firstNamesParameter, surnameParameter, imageParameter);
         }
     
         public virtual int updateAVote(Nullable<int> userID, Nullable<int> vote, Nullable<int> answerId)
@@ -199,24 +315,6 @@ namespace CombinedIntelligenceAPI.Models
                 new ObjectParameter("score", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateScore", userIDParameter, scoreParameter);
-        }
-    
-        public virtual ObjectResult<getUserAnswers_Result> getUserAnswers(Nullable<int> userID)
-        {
-            var userIDParameter = userID.HasValue ?
-                new ObjectParameter("UserID", userID) :
-                new ObjectParameter("UserID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getUserAnswers_Result>("getUserAnswers", userIDParameter);
-        }
-    
-        public virtual ObjectResult<getUserQuestions_Result> getUserQuestions(Nullable<int> userID)
-        {
-            var userIDParameter = userID.HasValue ?
-                new ObjectParameter("UserID", userID) :
-                new ObjectParameter("UserID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getUserQuestions_Result>("getUserQuestions", userIDParameter);
         }
     }
 }
