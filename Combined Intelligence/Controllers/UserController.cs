@@ -115,6 +115,7 @@ namespace Combined_Intelligence.Controllers
 
         public ActionResult Profile(int ID)
         {
+			mockUser = getUser(ID);
             ViewBag.ID = mockUser.Id;
             ViewBag.userName = mockUser.Name;
             ViewBag.email = mockUser.Email;
