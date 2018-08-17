@@ -12,6 +12,8 @@ namespace Combined_Intelligence.Controllers
 	{
 
         CombinedIntelligenceAPI.Models.CombinedIntelligenceEntities CI;
+        public static List<Reward> rewardList;
+
         #region MockInfo
         User mockUser = new User("John", "John.Murray@gmail.com", "Actuaris", "IMAGE");
         List<Question> mockQuestions;
@@ -122,7 +124,7 @@ namespace Combined_Intelligence.Controllers
             mockUser = getUser(ID);
             mockQuestions = GetQuestions(ID);
             mockAnswers = GetAnswers(ID);
-            //mockRewards = getRewards();
+            mockRewards = getRewards();
             ViewBag.User = mockUser;
             ViewBag.ID = mockUser.Id;
             ViewBag.userName = mockUser.Name;
@@ -238,6 +240,11 @@ namespace Combined_Intelligence.Controllers
 
             }
             return ansList;
+        }
+
+        public List<Reward> getRewards()
+        {
+
         }
 
 	}
