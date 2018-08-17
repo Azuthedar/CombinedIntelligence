@@ -124,7 +124,6 @@ namespace Combined_Intelligence.Controllers
             mockUser = getUser(ID);
             mockQuestions = GetQuestions(ID);
             mockAnswers = GetAnswers(ID);
-            mockRewards = getRewards();
             ViewBag.User = mockUser;
             ViewBag.ID = mockUser.Id;
             ViewBag.userName = mockUser.Name;
@@ -240,11 +239,6 @@ namespace Combined_Intelligence.Controllers
 
             }
             return ansList;
-        }
-
-        public List<Reward> getRewards()
-        {
-
         }
 
 	}

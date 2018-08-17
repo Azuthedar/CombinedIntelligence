@@ -18,6 +18,7 @@ namespace Combined_Intelligence.Controllers
 			mockTags.Add(new Tag("A"));
 			mockTags.Add(new Tag("B"));
 			question = new Question(1, "World of Warcraft, is BFA worth playing?", "So I've been on this mission for quite some time, some people say it's worth coming back........\n Data data data\n datadata So I've been on this mission for quite some time, some people say it's worth coming back........\n Data data data\n datadata So I've been on this mission for quite some time, some people say it's worth coming back........\n Data data data\n datadata So I've been on this mission for quite some time, some people say it's worth coming back........\n Data data data\n datadata So I've been on this mission for quite some time, some people say it's worth coming back........\n Data data data\n datadata", mockTags, System.DateTime.Now);
+			question.Id = 1;
 
 			questionAnswers = new List<Answer>();
 

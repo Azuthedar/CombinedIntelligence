@@ -49,43 +49,58 @@
         </div>
         @foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
         {
-            <div class="one-col-grid">
-                <div class="grid-item">
-                    <div class="tableFormatGrid">
-                        <div class="score">
-                            @question.VoteScore
-                            <br />
-                            <span id="subscript">Score</span>
-                        </div>
-                        <div class="views">
-                            @question.totalViews
-                            <br />
-                            <span id="subscript">Views</span>
-                        </div>
-                        <div class="question">
-                            @question.HeaderText
-                            <br />
-                            <span id="subscript">Question - TIMESTAMP</span>
-                        </div>
-                        <div class="accepted">
-                            @if (question.HasAcceptedAnswer)
-                            {
-                                <span class="glyphicon glyphicon-ok" style="color:green"></span>
-                            }
-                            else
-                            {
-                                <span class="glyphicon glyphicon-remove" style="color:red"></span>
-                            }
-                            <br />
-                            <span id="subscript">Accepted Answer</span>
-                        </div>
-                        <div class="datePosted">
-                            @question.DatePosted
+        <div id="questionRef">
+            <a href="Post/Post/@question.Id">
+                <div class="one-col-grid">
+                    <div class="grid-item">
+                        <div class="tableFormatGrid">
+                            <div class="score">
+                                @if (question.VoteScore > 5)
+                                {
+                                    <span style="color:green">@question.VoteScore</span>
+                                }
+                                else if (question.VoteScore < -5)
+                                {
+                                    <span style="color:red">@question.VoteScore</span>
+                                }
+                                else
+                                {
+                                    @question.VoteScore
+                                }
+
+                                <br />
+                                <span id="subscript">Score</span>
+                            </div>
+                            <div class="views">
+                                @question.totalViews
+                                <br />
+                                <span id="subscript">Views</span>
+                            </div>
+                            <div class="question">
+                                @question.HeaderText
+                                <br />
+                                <span id="subscript">Question - TIMESTAMP</span>
+                            </div>
+                            <div class="accepted">
+                                @if (question.HasAcceptedAnswer)
+                                {
+                                    <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                                }
+                                <br />
+                                <span id="subscript">Accepted Answer</span>
+                            </div>
+                            <div class="datePosted">
+                                @question.DatePosted
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
+            </a>
+        </div>
         }
     </div>
 </body>
