@@ -143,12 +143,14 @@ namespace Combined_Intelligence.Controllers
 
         public ActionResult Answers(int ID)
 		{
+			ViewBag.User = DBCalls.getUser(ID);
             ViewBag.Answers = DBCalls.GetAnswers(ID);
             return View();
 		}  
 
 		public ActionResult Questions(int ID)
 		{
+			ViewBag.User = DBCalls.getUser(ID);
             ViewBag.Questions = DBCalls.GetQuestions(ID);
             return View();
 		}

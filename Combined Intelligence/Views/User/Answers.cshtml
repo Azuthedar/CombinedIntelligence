@@ -11,35 +11,37 @@
     {
         <div class="one-col-grid">
             <div class="grid-item">
-                <div class="tableFormatGrid">
-                    <div class="author">
-                        <strong>@ViewBag.User.Name</strong>
-                        <br />
-                        <span id="subscript">Author</span>
-                    </div>
-                    <div class="answer">
-                        <span class="answerText">@answer.BodyText</span>
-                        <br />
-                        <span id="subscript">Answer - @answer.DatePosted</span>
-                    </div>
-                    @{
-                        if (answer.Accepted)
-                        {
-                            <div class="accepted">
-                                <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                <div id="allAnswersQuestions">
+                    <a href="/Post/Post/@answer.QuestionId">
+                        <div class="tableFormatGrid">
+                            <div class="author">
+                                <strong>@ViewBag.User.Name</strong>
                                 <br />
-                                <span id="subscript">Accepted</span>
+                                <span id="subscript">Author</span>
                             </div>
-                        }
-                        else
-                        {
-                            <div class="accepted">
-                                <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                            <div class="answer">
+                                <span class="answerText">@answer.BodyText</span>
                                 <br />
-                                <span id="subscript">Not Accepted</span>
+                                <span id="subscript">Answer - @answer.DatePosted</span>
                             </div>
-                        }
-                    }
+                            @{
+                                if (answer.Accepted)
+                                {
+                                    <div class="accepted">
+                                        <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                                        <br />
+                                        <span id="subscript">Accepted</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="accepted">
+                                        <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                                        <br />
+                                        <span id="subscript">Not Accepted</span>
+                                    </div>
+                                }
+                            }
                             <div class="score">
                                 @{
                                     if (answer.VoteScore > 5)
@@ -59,6 +61,8 @@
                                 <br />
                                 <span id="subscript">Score</span>
                             </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
