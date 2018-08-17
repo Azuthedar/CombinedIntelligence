@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CombinedIntelligence.Data;
+using CombinedIntelligenceAPI.Controllers;
 
 namespace Combined_Intelligence.Controllers
 {
@@ -33,12 +34,15 @@ namespace Combined_Intelligence.Controllers
 			for (int i = 0; i < 400; i++)
 			{
 				allQuestions.Add(new Question(i, "User: " + i + "\'s headerText", "User: " + i + "\'s bodyText", mockTags, date));
+				allQuestions[i].Id = i;
+
 			}
 		}
 
 		// GET: Forum
-		public ActionResult Index()
+		public ActionResult Index(int ID)
 		{
+			ViewBag.User = DBCalls.getUser(ID);
 			ViewBag.Questions = allQuestions;
 			return View();
 		}

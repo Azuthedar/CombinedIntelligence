@@ -296,3 +296,10 @@ html {
     max-width: 35%;
     font-size: 1.5vh;
 }
+
+.one-col-grid #allAnswersQuestions a,
+.one-col-grid #allAnswersQuestions a:visited,
+.one-col-grid #allAnswersQuestions a:hover {
+    text-decoration: none;
+    color: black;
+}

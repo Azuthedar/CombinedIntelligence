@@ -39,21 +39,9 @@ namespace CombinedIntelligence.Data
 
 		public void AddTag(Tag tag)
 		{
-			Boolean foundTag = false;
-			
-			//Loop through all tags and if it finds a tag with the same name it doesn't add the tag to the array
-			//Could potentially be pretty slow because O(n) time
-            //I'm going to try to optimise this. May have to edit tag class to do so
-			Tags.ForEach(cTag =>
-			{
-				if (cTag.Name == tag.Name)
-					foundTag = true;
-			});
-			
-			if (!foundTag)
-			{
+			int i = Tags.BinarySearch(tag);
+			if (i < 0)
 				Tags.Add(tag);
-			}
 		}
 
 		public void IncrementScore()
