@@ -133,9 +133,9 @@ namespace CombinedIntelligenceAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddUserPreference", tagIdParameter, uIDParameter);
         }
     
-        public virtual int getAllQuestions()
+        public virtual ObjectResult<getAllQuestions_Result> getAllQuestions()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("getAllQuestions");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllQuestions_Result>("getAllQuestions");
         }
     
         public virtual ObjectResult<GetAnswers_Result> GetAnswers(Nullable<int> qID)

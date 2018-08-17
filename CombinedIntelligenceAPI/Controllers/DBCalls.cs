@@ -157,18 +157,139 @@ namespace CombinedIntelligenceAPI.Controllers
             }
         }
 
-        /*public static List<Question> GetTagQuestions(int UID)
+        public static List<Question> GetTagQuestions(string Tags)
         {
             List<Question> qList = new List<Question>();
             using (CI = new Models.CombinedIntelligenceEntities())
             {
-                var result = CI.GetQuestions().ToList().First();
+                var result = CI.GetQuestions(Tags).ToList();
+                foreach (var question in result)
+                {
+                    Question cur = new Question()
+                    {
+                        Id = question.QuestionId,
+                        UserId = question.UserId,
+                        BodyText = question.Body,
+                        DatePosted = question.DatePosted,
+                        HeaderText = question.Header
+                    };
+
+                    var votes = CI.getQVotes(question.QuestionId).ToList();
+                    foreach (var vote in votes)
+                        cur.Votes.Add(new Vote(vote.UserId, (VoteTypes)vote.Value));
+                    qList.Add(cur);
+
+                    var tags = CI.getQTags(question.QuestionId).ToList();
+                    foreach (var tag in tags)
+                        cur.AddTag(new Tag(tag.Name));
+                    
+                }
+
+            }
+            return qList;
+        }
+
+        public static User getUserLogin(string email, string password)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                var result = CI.GetUserLogin(email, password).ToList();
+                if (result.Count == 0)
+                    return null;
+                var res = result.First();
+                User user = new User()
+                {
+                    Id = res.UserID,
+                    Email = email,
+                    Image = res.Image,
+                    Name = res.Name,
+                    Score = res.Score,
+                    Team = getTeamName(res.TeamId)
+                };
+                var tags = getUserTags(res.UserID);
+                foreach (var tag in tags)
+                    user.AddTag(new Tag(tag));
+                return user;
+            }
+            
+        }
+
+        public static string getTeamName(int TID)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                return CI.getTeamName(TID).ToList().First();
+            }
+        }
+
+        public static List<string> getUserTags(int uID)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                var tags = CI.getUserTags(uID).ToList();
+                return tags;
+            }
+        }
+
+        public static void updateAVote(int aID, int uID, int value)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                CI.updateAVote(uID, value, aID);
+            }
+        }
+
+        public static void updateQVote(int qID, int uID, int value)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                CI.updateQVote(uID, value, qID);
+            }
+        }
+
+        public static void updateScore(int uID, int value)
+        {
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                CI.updateScore(uID, value);
+            }
+        }
+
+        public static User registerUser(string password, string email, int teamId, string name, string surname, string image)
+        {
+
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                var res = CI.RegisterUser(password, email, teamId, name, surname, image).ToList().First();
+                if (res == -1)
+                    return new User() { Id = -1 };
+                User user = new User()
+                {
+                    Id = (int)res,
+                    Email = email,
+                    Image = image,
+                    Name = name,
+                    Score = 0,
+                    Team = getTeamName(teamId)
+                };
+                return user;
+
+            }
+            
+        }
+
+        public static List<Question> GetAllQuestions()
+        {
+            List<Question> qList = new List<Question>();
+            using (CI = new Models.CombinedIntelligenceEntities())
+            {
+                var result = CI.getAllQuestions().ToList();
                 foreach (var question in result)
                 {
                     Question cur = new Question()
                     {
                         Id = question.QuestionID,
-                        UserId = UID,
+                        UserId = question.UserID,
                         BodyText = question.Body,
                         DatePosted = question.DatePosted,
                         HeaderText = question.Header
@@ -187,7 +308,7 @@ namespace CombinedIntelligenceAPI.Controllers
 
             }
             return qList;
-        }*/
+        }
 
         /*public static List<Reward> getRewards()
         {

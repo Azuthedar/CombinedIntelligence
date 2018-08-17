@@ -142,7 +142,7 @@
             <Parameter Name="TagId" Mode="In" Type="Int32" />
             <Parameter Name="UID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getAllQuestions" />
+          <FunctionImport Name="getAllQuestions" ReturnType="Collection(CombinedIntelligenceModel.getAllQuestions_Result)" />
           <FunctionImport Name="GetAnswers" ReturnType="Collection(CombinedIntelligenceModel.GetAnswers_Result)">
           <Parameter Name="QID" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -269,6 +269,13 @@
           <Property Type="String" Name="Body" Nullable="false" />
           <Property Type="DateTime" Name="DatePosted" Nullable="false" Precision="23" />
         </ComplexType>
+        <ComplexType Name="getAllQuestions_Result">
+          <Property Type="Int32" Name="QuestionID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Header" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Body" Nullable="false" />
+          <Property Type="DateTime" Name="DatePosted" Nullable="false" Precision="23" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -303,7 +310,17 @@
           <FunctionImportMapping FunctionImportName="addQuestionTag" FunctionName="CombinedIntelligenceModel.Store.addQuestionTag" />
           <FunctionImportMapping FunctionImportName="AddTag" FunctionName="CombinedIntelligenceModel.Store.AddTag" />
           <FunctionImportMapping FunctionImportName="AddUserPreference" FunctionName="CombinedIntelligenceModel.Store.AddUserPreference" />
-          <FunctionImportMapping FunctionImportName="getAllQuestions" FunctionName="CombinedIntelligenceModel.Store.getAllQuestions" />
+          <FunctionImportMapping FunctionImportName="getAllQuestions" FunctionName="CombinedIntelligenceModel.Store.getAllQuestions" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CombinedIntelligenceModel.getAllQuestions_Result">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetAnswers" FunctionName="CombinedIntelligenceModel.Store.GetAnswers">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CombinedIntelligenceModel.GetAnswers_Result">
