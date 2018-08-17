@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CombinedIntelligenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CombinedIntelligenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="AcceptAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AnswerId" Type="int" Mode="In" />
         </Function>
@@ -102,8 +102,7 @@
           <Parameter Name="score" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="CombinedIntelligenceModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CombinedIntelligenceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -116,7 +115,7 @@
             <Parameter Name="Delimiter" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AcceptAns">
-            <Parameter Name="AnswerId" Mode="In" Type="Int32" />
+          <Parameter Name="AnswerId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AddAnswer" ReturnType="Collection(CombinedIntelligenceModel.AddAnswer_Result)">
             <Parameter Name="QuestionId" Mode="In" Type="Int32" />
@@ -137,7 +136,7 @@
             <Parameter Name="TagId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AddTag" ReturnType="Collection(Int32)">
-            <Parameter Name="Tagname" Mode="In" Type="String" />
+          <Parameter Name="Tagname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AddUserPreference" ReturnType="Collection(Int32)">
             <Parameter Name="TagId" Mode="In" Type="Int32" />
@@ -145,38 +144,38 @@
           </FunctionImport>
           <FunctionImport Name="getAllQuestions" />
           <FunctionImport Name="GetAnswers" ReturnType="Collection(CombinedIntelligenceModel.GetAnswers_Result)">
-            <Parameter Name="QID" Mode="In" Type="Int32" />
+          <Parameter Name="QID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getAVotes" ReturnType="Collection(CombinedIntelligenceModel.getAVotes_Result)">
-            <Parameter Name="AnswerId" Mode="In" Type="Int32" />
+          <Parameter Name="AnswerId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getQTags" ReturnType="Collection(CombinedIntelligenceModel.getQTags_Result)">
-            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+          <Parameter Name="QuestionId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetQuestions" ReturnType="Collection(CombinedIntelligenceModel.GetQuestions_Result)">
-            <Parameter Name="Tags" Mode="In" Type="String" />
+          <Parameter Name="Tags" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getQVotes" ReturnType="Collection(CombinedIntelligenceModel.getQVotes_Result)">
-            <Parameter Name="QuestionId" Mode="In" Type="Int32" />
+          <Parameter Name="QuestionId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getTeamName" ReturnType="Collection(String)">
-            <Parameter Name="TeamID" Mode="In" Type="Int32" />
+          <Parameter Name="TeamID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUser" ReturnType="Collection(CombinedIntelligenceModel.GetUser_Result)">
-            <Parameter Name="UID" Mode="In" Type="Int32" />
+          <Parameter Name="UID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserAnswers" ReturnType="Collection(CombinedIntelligenceModel.getUserAnswers_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetUserLogin" ReturnType="Collection(CombinedIntelligenceModel.GetUserLogin_Result)">
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getUserQuestions" ReturnType="Collection(CombinedIntelligenceModel.getUserQuestions_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserTags" ReturnType="Collection(String)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RegisterUser" ReturnType="Collection(Int32)">
             <Parameter Name="Password" Mode="In" Type="String" />

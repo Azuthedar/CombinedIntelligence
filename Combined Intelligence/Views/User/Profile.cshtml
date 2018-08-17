@@ -66,21 +66,25 @@
 			@{ int answerIt = 0; }
 				@foreach (CombinedIntelligence.Data.Answer answer in ViewBag.Answers)
 				{
-					<div class="tableFormatGrid">
-						<div class="score">
-							@answer.VoteScore
-						<br />
-						<span id="subscript">Score</span>
-					</div>
-					<div class="description">@answer.BodyText</div>
-					</div>
+                    <div class="answersQuestion">
+                        <a href="/Post/Post/@answer.QuestionId">
+                            <div class="tableFormatGrid">
+                                <div class="score">
+                                    @answer.VoteScore
+                                    <br />
+                                    <span id="subscript">Score</span>
+                                </div>
+                                <div class="description">@answer.BodyText</div>
+                            </div>
+                        </a>
+                    </div>
 					<hr class="style-two" />
 					answerIt++;
 					if (answerIt >= ViewBag.MaxShown)
 					{
 						break;
-				}
-			}
+				    }
+			    }
 				<a class="button" href="/User/Answers/@ViewBag.User.Id"><div class="button">All Answers</div></a>
 		</div>
 		<div class="grid-item">
@@ -88,19 +92,23 @@
 			@{ int questionIt = 0; }
 			@foreach (CombinedIntelligence.Data.Question question in ViewBag.Questions)
 			{
-				<div class="tableFormatGrid">
-					<div class="score">
-						@question.VoteScore
-						<br />
-						<span id="subscript">Score</span>
-					</div>
-					<div class="views">
-						@question.totalViews
-						<br />
-						<span id="subscript">Views</span>
-					</div>
-					<div class="description">@question.HeaderText</div>
-				</div>
+                <div class="questionsHref">
+                    <a href="/Post/Post/@question.Id">
+                        <div class="tableFormatGrid">
+                            <div class="score">
+                                @question.VoteScore
+                                <br />
+                                <span id="subscript">Score</span>
+                            </div>
+                            <div class="views">
+                                @question.totalViews
+                                <br />
+                                <span id="subscript">Views</span>
+                            </div>
+                            <div class="description">@question.HeaderText</div>
+                        </div>
+                    </a>
+                </div>
 				<hr class="style-two" />
 				questionIt++;
 				if (questionIt >= ViewBag.MaxShown)

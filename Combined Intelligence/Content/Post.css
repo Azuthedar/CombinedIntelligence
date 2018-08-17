@@ -55,3 +55,12 @@ textarea {
     height: 20%;
     resize: none;
 }
+
+#questionRef a,
+#questionRef a:hover,
+#questionRef a:visited,
+#questionRef {
+    text-decoration: none;
+    color: black;
+}
+
